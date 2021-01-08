@@ -1,0 +1,12 @@
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.pdb
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.SqlServer.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.SqlServer.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csprojAssemblyReference.cache
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CoreCompileInputs.cache
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CopyComplete
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.pdb

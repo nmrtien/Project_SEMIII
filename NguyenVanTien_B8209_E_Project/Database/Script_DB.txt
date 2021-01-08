@@ -1,0 +1,107 @@
+CREATE TABLE [dbo].[TB_ACCOUNT](
+	[S_ID] [varchar] (50) primary key NOT NULL,
+	[S_ACCOUNT] [varchar] (50) UNIQUE NOT NULL,
+	[S_PASSWORD] [varchar](50) NOT NULL,
+	[S_TYPE] [varchar](50) NOT NULL,
+	[S_FULLNAME] [varchar](50) NOT NULL,
+	[S_PHONE] [varchar](50) NOT NULL,
+	[S_ADDRESS] [varchar](50) NOT NULL,
+	[S_STATUS] [varchar](50) NOT NULL,
+	[D_BIRTHDAY] [DATE] NOT NULL
+) ON [PRIMARY];
+
+GO
+
+CREATE TABLE [dbo].[TB_STORE](
+	[S_ID] [varchar] (50) primary key NOT NULL,
+	[S_NAME] [varchar] (50) UNIQUE NOT NULL,
+	[S_CONTACT] [varchar](50) NOT NULL,
+	[S_ADDRESS] [varchar](50) NOT NULL,
+	[S_STATUS] [varchar](50) NOT NULL,
+	[D_CREATED] [DATE] NOT NULL,
+	[S_EMPLOYEE_ID] [varchar] (50) UNIQUE FOREIGN KEY REFERENCES TB_ACCOUNT(S_ID)
+) ON [PRIMARY];
+
+GO
+
+INSERT INTO TB_ACCOUNT VALUES('EM004','employee04','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM005','employee05','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM006','employee06','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM007','employee07','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM008','employee08','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM009','employee09','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0010','employee10','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0011','employee11','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0012','employee12','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0013','employee13','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0014','employee14','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0015','employee15','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0016','employee16','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0017','employee17','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0018','employee18','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0019','employee19','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0020','employee20','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0021','employee21','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0022','employee22','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0023','employee23','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0024','employee24','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0025','employee25','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0026','employee26','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0027','employee27','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0028','employee28','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0029','employee29','employee','employee','employee01','employee01','employee01','1999-09-29');
+INSERT INTO TB_ACCOUNT VALUES('EM0030','employee30','employee','employee','employee01','employee01','employee01','1999-09-29');
+
+DROP TABLE [TB_ACCOUNT];
+
+GO
+
+CREATE PROCEDURE PROC_Login 
+	@S_ACCOUNT varchar(50),
+	@S_PASSWORD varchar(50)
+AS
+SELECT COUNT(*) FROM TB_ACCOUNT AS acc WHERE acc.S_ACCOUNT = @S_ACCOUNT AND acc.S_PASSWORD = @S_PASSWORD AND (acc.S_TYPE = 'admin' OR acc.S_TYPE = 'employee');
+
+GO
+
+CREATE PROCEDURE PROC_GetAccount 
+	@S_ACCOUNT varchar(50),
+	@S_PASSWORD varchar(50)
+AS
+SELECT * FROM TB_ACCOUNT AS acc WHERE acc.S_ACCOUNT = @S_ACCOUNT AND acc.S_PASSWORD = @S_PASSWORD AND (acc.S_TYPE = 'admin' OR acc.S_TYPE = 'employee');
+
+GO
+
+CREATE PROCEDURE PROC_GetListEmployee 
+AS
+SELECT * FROM TB_ACCOUNT AS acc WHERE acc.S_TYPE = 'employee' ORDER BY acc.S_ID;
+
+GO
+
+CREATE PROCEDURE PROC_DeleteAccount
+	@S_ID varchar(50)
+AS
+DELETE FROM TB_ACCOUNT WHERE S_ID = @S_ID;
+GO
+
+CREATE PROCEDURE PROC_InActiveAccount
+	@S_ID varchar(50)
+AS
+UPDATE TB_ACCOUNT
+SET S_STATUS = 'InActive'
+WHERE S_ID = @S_ID;
+GO
+
+CREATE PROCEDURE PROC_GetAllStore
+AS
+SELECT s.*, a.S_FULLNAME AS S_EMPLOYEE_NAME FROM TB_STORE AS s
+INNER JOIN TB_ACCOUNT AS a ON S_EMPLOYEE_ID = a.S_ID;
+GO
+
+CREATE PROCEDURE PROC_InActiveStore
+	@S_ID varchar(50)
+AS
+UPDATE TB_STORE
+SET S_STATUS = 'InActive'
+WHERE S_ID = @S_ID;
+GO

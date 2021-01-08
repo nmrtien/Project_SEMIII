@@ -1,0 +1,163 @@
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.dll.config
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.pdb
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csc.exe
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csc.exe.config
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csc.rsp
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csi.exe
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csi.exe.config
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csi.rsp
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.Managed.Core.targets
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.Win32.Primitives.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.AppContext.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Collections.Immutable.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Console.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Diagnostics.StackTrace.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Globalization.Calendars.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.Compression.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.Compression.ZipFile.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.FileSystem.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Net.Http.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Net.Sockets.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Reflection.Metadata.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.Encoding.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.Primitives.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Text.Encoding.CodePages.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Threading.Tasks.Extensions.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.ValueTuple.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.ReaderWriter.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.XmlDocument.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.XPath.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.XPath.XDocument.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.exe
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.exe.config
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.rsp
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe.config
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Antlr3.Runtime.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Microsoft.Web.Infrastructure.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Newtonsoft.Json.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Helpers.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Mvc.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Optimization.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Razor.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Deployment.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Razor.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\WebGrease.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Helpers.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Mvc.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Optimization.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Razor.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Deployment.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Razor.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Newtonsoft.Json.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Antlr3.Runtime.pdb
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.csprojAssemblyReference.cache
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.csproj.CoreCompileInputs.cache
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.csproj.CopyComplete
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.dll
+A:\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.pdb
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.dll.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.pdb
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csc.exe
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csc.exe.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csc.rsp
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csi.exe
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csi.exe.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\csi.rsp
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.Managed.Core.targets
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.AppContext.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Collections.Immutable.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Console.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Globalization.Calendars.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.Compression.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.Compression.ZipFile.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.FileSystem.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Net.Http.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Net.Sockets.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Reflection.Metadata.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.ValueTuple.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.XmlDocument.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.XPath.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.exe
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.exe.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.rsp
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Antlr3.Runtime.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Microsoft.Web.Infrastructure.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Newtonsoft.Json.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Helpers.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Mvc.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Optimization.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Razor.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Deployment.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Razor.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\WebGrease.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Helpers.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Mvc.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Optimization.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.Razor.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Deployment.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Razor.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Newtonsoft.Json.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Antlr3.Runtime.pdb
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.csprojAssemblyReference.cache
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.csproj.CoreCompileInputs.cache
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.csproj.CopyComplete
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Debug\E_Project.pdb
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\ModelEntity.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\EntityFramework.dll
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\ModelEntity.pdb
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\ModelEntity.dll.config
+G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\EntityFramework.xml
