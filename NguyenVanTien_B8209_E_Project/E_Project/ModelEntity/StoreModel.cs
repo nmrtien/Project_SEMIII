@@ -45,5 +45,19 @@ namespace ModelEntity
 
             return storeResult;
         }
+
+        public object updateStoreById(TB_STORE store)
+        {
+            object[] sqlParams =
+            {
+                new SqlParameter("@S_ID", store.S_ID),
+                new SqlParameter("@S_NAME", store.S_NAME),
+                new SqlParameter("@S_ADDRESS", store.S_ADDRESS),
+                new SqlParameter("@S_CONTACT", store.S_CONTACT),
+            };
+            var result = context.Database.SqlQuery<object>("PROC_updateStoreById @S_ID,@S_NAME,@S_ADDRESS,@S_CONTACT", sqlParams).SingleOrDefault();
+
+            return result;
+        }
     }
 }

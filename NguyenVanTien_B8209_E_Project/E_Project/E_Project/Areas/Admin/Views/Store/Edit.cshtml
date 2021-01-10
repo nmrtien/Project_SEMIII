@@ -15,7 +15,7 @@
         <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-                
+
                 <div class="col-lg-12 text-center" style="padding-left: 500px !important">
                     <div class="p-5 text-center">
                         <div class="form-group col-lg-6 text-center">
@@ -24,8 +24,8 @@
 
                         @using (Html.BeginForm())
                         {
-                            @Html.AntiForgeryToken()
-                            @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                            
 
                             <div class="form-group col-lg-6">
                                 @Html.TextBoxFor(model => model.S_ID, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
@@ -36,22 +36,29 @@
 
                             </div>
                             <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_ADDRESS, new { @class = "form-control form-control-user", @placeholder = "ID..."})
+                                @Html.TextBoxFor(model => model.S_ADDRESS, new { @class = "form-control form-control-user", @placeholder = "ADDRESS..." })
 
                             </div>
                             <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_CONTACT, new { @class = "form-control form-control-user", @placeholder = "Store name..." })
+                                @Html.TextBoxFor(model => model.S_CONTACT, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
 
                             </div>
-                           
+
+                            <div class="form-group col-lg-6">
+                                @Html.TextBoxFor(model => model.S_STATUS, new { @class = "form-control form-control-user", @placeholder = "Store name...", @readOnly = "true" })
+
+                            </div>
+
+                          
+
                             <div class="form-group col-lg-6 row" style="margin-left: 20px">
                                 <div class="form-group col-lg-6 row">
                                     <a href="@Url.Action("List","Store")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
                                 </div>
                                 <div class="form-group col-lg-6 row">
-                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px">Save</button>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
                                 </div>
-                                
+
                             </div>
                         }
 
@@ -61,6 +68,10 @@
             </div>
         </div>
     </div>
-
+    <script>
+        function myFunction() {
+            alert("Update Store success!");
+        }
+    </script>
 </body>
 </html>
