@@ -34,5 +34,16 @@ namespace ModelEntity
             var result = context.Database.SqlQuery<object>("PROC_InActiveStore @S_ID", sqlParams).SingleOrDefault();
             return result;
         }
+
+        public TB_STORE getStoreById(string id)
+        {
+            object[] sqlParams =
+            {
+                new SqlParameter("@S_ID", id)
+            };
+            TB_STORE storeResult = context.Database.SqlQuery<TB_STORE>("PROC_GetStoreById @S_ID", sqlParams).SingleOrDefault();
+
+            return storeResult;
+        }
     }
 }

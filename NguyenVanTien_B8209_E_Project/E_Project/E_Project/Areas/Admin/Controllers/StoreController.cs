@@ -34,7 +34,9 @@ namespace E_Project.Areas.Admin.Controllers
         // GET: Admin/Store/Create
         public ActionResult Create()
         {
-            return View();
+            var storeModel = new StoreModel();
+            var store = storeModel.getListStore();
+            return View(store);
         }
 
         // POST: Admin/Store/Create
@@ -54,9 +56,11 @@ namespace E_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Store/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string s_id)
         {
-            return View();
+            var storeModel = new StoreModel();
+            var store = storeModel.getStoreById(s_id);
+            return View(store);
         }
 
         // POST: Admin/Store/Edit/5
