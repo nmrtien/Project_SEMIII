@@ -15,15 +15,17 @@ namespace E_Project.Areas.Admin.Controllers
         // GET: Admin/Store
         public ActionResult List()
         {
-            var storeModel = new StoreModel();
+            var storeModel = new StoreDBModel();
             var storeList = storeModel.getListStore();
             return View(storeList);
         }
 
-        public ActionResult InActiveStore(string s_id)
+        public ActionResult UpdateStatusStore(string s_id, string s_status)
         {
-            var storeModel = new StoreModel();
-            storeModel.inActiveStore(s_id);
+            var storeDBModel = new StoreDBModel();
+            
+            s_status = s_status.Equals("Active") ? "InActive" : "Active";
+            storeDBModel.updateStatusStore(s_id, s_status);
             return RedirectToAction("List", "Store");
         }
 
@@ -37,19 +39,31 @@ namespace E_Project.Areas.Admin.Controllers
         public ActionResult Create()
         {
             var storeModel = new StoreModel();
-            var store = storeModel.getListStore();
-            return View(store);
+            var accountModel = new AccountDBModel();
+            List<TB_ACCOUNT> accountList = accountModel.getDropDownEmployee();
+            storeModel.listAccount = new List<AccountModel>();
+            //storeModel.listAccount.Add(new AccountModel(0, "SELECT AN MANAGER"));
+            accountList.ForEach(account => storeModel.listAccount.Add(new AccountModel(account.S_ID, account.S_FULLNAME)));
+            return View(storeModel);
         }
 
         // POST: Admin/Store/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(StoreModel storeModel)
         {
             try
             {
-                // TODO: Add insert logic here
+                int employeeID = Request.Form["ddlAccount"] == null ? 0 : Int32.Parse(Request.Form["ddlAccount"]);
 
-                return RedirectToAction("Index");
+                var storeDBModel = new StoreDBModel();
+                TB_STORE store = new TB_STORE();
+                store.S_NAME = storeModel.storeName;
+                store.S_CONTACT = storeModel.contact;
+                store.S_ADDRESS = storeModel.address;
+                store.S_EMPLOYEE_ID = employeeID;
+                storeDBModel.createStore(store);
+
+                return RedirectToAction("List");
             }
             catch
             {
@@ -58,32 +72,46 @@ namespace E_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Store/Edit/5
-        public ActionResult Edit(string s_id)
+        public ActionResult Edit(int s_id)
         {
+            var storeDBModel = new StoreDBModel();
             var storeModel = new StoreModel();
-            var store = storeModel.getStoreById(s_id);
-            return View(store);
+            var accountModel = new AccountDBModel();
+            List<TB_ACCOUNT> accountList = accountModel.getDropDownEmployee();
+            storeModel.listAccount = new List<AccountModel>();
+            storeModel.listAccount.Add(new AccountModel(0, "SELECT ANOTHER MANAGER"));
+            accountList.ForEach(account => storeModel.listAccount.Add(new AccountModel(account.S_ID, account.S_FULLNAME)));
+            var store = storeDBModel.getStoreById(s_id);
+            storeModel.id = store.S_ID;
+            storeModel.storeName = store.S_NAME;
+            storeModel.contact = store.S_CONTACT;
+            storeModel.address = store.S_ADDRESS;
+            storeModel.status = store.S_STATUS;
+            storeModel.employeeId = store.S_EMPLOYEE_ID;
+            return View(storeModel);
         }
 
         // POST: Admin/Store/Edit/5
         [HttpPost]
         
-        public ActionResult Edit(TB_STORE store)
+        public ActionResult Edit(StoreModel storeModel)
         {
             try
             {
-                if ((store.S_NAME != null && !store.S_NAME.Equals("")) && (store.S_ADDRESS != null && !store.S_ADDRESS.Equals("")) && (store.S_CONTACT != null && !store.S_CONTACT.Equals("")))
-                {
-                    var storeModel = new StoreModel();
-                    storeModel.updateStoreById(store);
+                
+                    int employeeID = Request.Form["ddlAccount"] == null ? 0 : Int32.Parse(Request.Form["ddlAccount"]);
+                    var storeDBModel = new StoreDBModel();
+                    TB_STORE store = new TB_STORE();
+                store.S_ID = storeModel.id;
+                store.S_NAME = storeModel.storeName;
+                store.S_ADDRESS = storeModel.address;
+                store.S_CONTACT = storeModel.contact;
+                store.S_EMPLOYEE_ID = employeeID;
+                storeDBModel.updateStoreById(store);
                     
                     return RedirectToAction("List");
                     
-                } else
-                {
-                    ModelState.AddModelError("", "Update failed, please try again !");
-                    return View();
-                }
+               
             }
             catch
             {

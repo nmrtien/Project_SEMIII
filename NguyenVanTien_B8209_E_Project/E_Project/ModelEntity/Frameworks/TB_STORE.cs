@@ -9,8 +9,7 @@ namespace ModelEntity.Frameworks
     public partial class TB_STORE
     {
         [Key]
-        [StringLength(50)]
-        public string S_ID { get; set; }
+        public int S_ID { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -31,12 +30,10 @@ namespace ModelEntity.Frameworks
         [Column(TypeName = "date")]
         public DateTime D_CREATED { get; set; }
 
-        [StringLength(50)]
-        public string S_EMPLOYEE_ID { get; set; }
+        public int? S_EMPLOYEE_ID { get; set; }
 
         public virtual TB_ACCOUNT TB_ACCOUNT { get; set; }
 
-        [StringLength(50)]
         public string S_EMPLOYEE_NAME { get; set; }
     }
 }

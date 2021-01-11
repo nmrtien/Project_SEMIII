@@ -14,7 +14,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">List Employee</h1>
+        <h1 class="h3 mb-2 text-gray-800">List Store</h1>
         @*<p class="mb-4">
                 DataTables is a third party plugin that is used to generate the demo table below.
                 For more information about DataTables, please visit the <a target="_blank"
@@ -24,7 +24,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><a href="#">Add new</a></h6>
+                <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("Create","Store")">Add new</a></h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive" style="overflow-x: hidden !important">
@@ -67,7 +67,19 @@
                                     <td>
                                         <a href="@Url.Action("Edit","Store", new { s_id = @item.S_ID })" style="margin-left: 5px">Edit</a>
 
-                                        <a href="@Url.Action("InActiveStore","Store", new { s_id = @item.S_ID })" style="margin-left: 10px;color: red" onclick="myFunction()">InActive</a>
+                                        @if (@item.S_STATUS.Equals("Active"))
+                                        {
+                                    <a href="@Url.Action("UpdateStatusStore","Store", new { s_id = @item.S_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                        InActive
+                                    </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Url.Action("UpdateStatusStore","Store", new { s_id = @item.S_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                                Active
+                                            </a>
+                                        }
+
                                     </td>
                                 </tr>
                             }
@@ -85,7 +97,7 @@
 
     <script>
         function myFunction() {
-            alert("InActive Store success!");
+            alert("Update Store success!");
         }
     </script>
 </body>

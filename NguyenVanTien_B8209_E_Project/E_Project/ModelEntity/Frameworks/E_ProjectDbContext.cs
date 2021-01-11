@@ -18,10 +18,6 @@ namespace ModelEntity.Frameworks
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TB_ACCOUNT>()
-                .Property(e => e.S_ID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TB_ACCOUNT>()
                 .Property(e => e.S_ACCOUNT)
                 .IsUnicode(false);
 
@@ -55,10 +51,6 @@ namespace ModelEntity.Frameworks
                 .HasForeignKey(e => e.S_EMPLOYEE_ID);
 
             modelBuilder.Entity<TB_STORE>()
-                .Property(e => e.S_ID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TB_STORE>()
                 .Property(e => e.S_NAME)
                 .IsUnicode(false);
 
@@ -72,10 +64,6 @@ namespace ModelEntity.Frameworks
 
             modelBuilder.Entity<TB_STORE>()
                 .Property(e => e.S_STATUS)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TB_STORE>()
-                .Property(e => e.S_EMPLOYEE_ID)
                 .IsUnicode(false);
         }
     }

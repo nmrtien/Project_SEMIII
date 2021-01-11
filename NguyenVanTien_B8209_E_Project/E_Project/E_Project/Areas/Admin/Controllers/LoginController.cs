@@ -37,10 +37,10 @@ namespace E_Project.Areas.Admin.Controllers
             {
                 model.password = "";
             }
-            var checkLogin = new AccountModel().Login(model.account, model.password);
+            var checkLogin = new AccountDBModel().Login(model.account, model.password);
             if (checkLogin != 0 && ModelState.IsValid)
             {
-                var result = new AccountModel().getAccount(model.account, model.password);
+                var result = new AccountDBModel().getAccount(model.account, model.password);
                 SessionHelper.SetSession(new InfoSession() { id = result.S_ID , account = result.S_ACCOUNT, password = result.S_PASSWORD, fullName = result.S_FULLNAME, address = result.S_ADDRESS, birthDay = result.D_BIRTHDAY });
                 return RedirectToAction("Index", "Home");
             } else

@@ -2,7 +2,7 @@
 @{
     Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
 }
-@model ModelEntity.Frameworks.TB_STORE
+@model E_Project.Areas.Admin.Model.StoreModel
 <!DOCTYPE html>
 
 <html>
@@ -16,46 +16,48 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
 
-                <div class="col-lg-12 text-center" style="padding-left: 500px !important">
+                <div class="col-lg-12 text-center">
                     <div class="p-5 text-center">
-                        <div class="form-group col-lg-6 text-center">
+                        <div class="form-group col-lg-12 text-center">
                             <h1 class="h4 text-gray-900 mb-4">EDIT STORE</h1>
                         </div>
 
                         @using (Html.BeginForm())
                         {
 
-                            
-
-                            <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_ID, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
 
                             </div>
-                            <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_NAME, new { @class = "form-control form-control-user", @placeholder = "Store name..." })
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.storeName, new { @class = "form-control form-control-user", @placeholder = "Store name..." })
 
                             </div>
-                            <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_ADDRESS, new { @class = "form-control form-control-user", @placeholder = "ADDRESS..." })
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.address, new { @class = "form-control form-control-user", @placeholder = "ADDRESS..." })
 
                             </div>
-                            <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_CONTACT, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
 
                             </div>
 
-                            <div class="form-group col-lg-6">
-                                @Html.TextBoxFor(model => model.S_STATUS, new { @class = "form-control form-control-user", @placeholder = "Store name...", @readOnly = "true" })
+                            <div class="form-group col-lg-12">
+                                @Html.DropDownList("ddlAccount", new SelectList(Model.listAccount, "id", "employeeName"), new { @class = "form-control form-control-user" })
+                            </div>
+
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Store name...", @readOnly = "true" })
 
                             </div>
 
-                          
 
-                            <div class="form-group col-lg-6 row" style="margin-left: 20px">
-                                <div class="form-group col-lg-6 row">
+
+                            <div class="form-group col-lg-6 row">
+                                <div class="form-group col-lg-2 row">
                                     <a href="@Url.Action("List","Store")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
                                 </div>
-                                <div class="form-group col-lg-6 row">
+                                <div class="form-group col-lg-2 row">
                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
                                 </div>
 

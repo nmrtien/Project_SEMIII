@@ -19,17 +19,18 @@ namespace E_Project.Areas.Admin.Controllers
 
             model = SessionHelper.GetInfoSession();
             Session["infoSession"] = model;
-            var accountModel = new AccountModel();
+            var accountModel = new AccountDBModel();
             var listEmployee = accountModel.getListEmployee();
             return View(listEmployee);
         }
 
         
-        public ActionResult InActiveEmployee(string s_id)
+        public ActionResult UpdateStatusEmployee(string s_id, string s_status)
         {
             
-            var accountModel = new AccountModel();
-            accountModel.inActiveAccount(s_id);
+            var accountModel = new AccountDBModel();
+            s_status = s_status.Equals("Active") ? "InActive" : "Active";
+            accountModel.updateStatusAccount(s_id, s_status);
             return RedirectToAction("Index","Home");
         }
     }

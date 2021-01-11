@@ -15,8 +15,7 @@ namespace ModelEntity.Frameworks
         }
 
         [Key]
-        [StringLength(50)]
-        public string S_ID { get; set; }
+        public int S_ID { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -42,11 +41,12 @@ namespace ModelEntity.Frameworks
         [StringLength(50)]
         public string S_ADDRESS { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime D_BIRTHDAY { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string S_STATUS { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime D_BIRTHDAY { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_STORE> TB_STORE { get; set; }
