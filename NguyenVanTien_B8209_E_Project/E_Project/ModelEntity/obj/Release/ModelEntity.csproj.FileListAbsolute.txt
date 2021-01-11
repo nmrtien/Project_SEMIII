@@ -9,3 +9,15 @@ G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Re
 G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csproj.CopyComplete
 G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.dll
 G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.pdb
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\ModelEntity.dll.config
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\ModelEntity.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\ModelEntity.pdb
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.SqlServer.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.xml
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.SqlServer.xml
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csprojAssemblyReference.cache
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csproj.CoreCompileInputs.cache
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csproj.CopyComplete
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.pdb

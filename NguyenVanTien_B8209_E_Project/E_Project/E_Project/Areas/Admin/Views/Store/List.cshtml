@@ -34,7 +34,7 @@
                                 <th>ID</th>
                                 <th>Store Name</th>
                                 <th>Manager</th>
-                                <th>Contact</th>                              
+                                <th>Contact</th>
                                 <th>Address</th>
                                 <th>Created Date</th>
                                 <th>Status</th>
@@ -56,20 +56,20 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                            <tr>
-                                <td>@item.S_ID</td>
-                                <td>@item.S_NAME</td>
-                                <td>@item.S_EMPLOYEE_NAME</td>
-                                <td>@item.S_CONTACT</td>
-                                <td>@item.S_ADDRESS</td>
-                                <td>@item.D_CREATED.ToString("dd/MM/yyyy")</td>
-                                <td>@item.S_STATUS</td>
-                                <td>
-                                    <a href="#" style="margin-left: 5px">Edit</a>
+                                <tr>
+                                    <td>@item.S_ID</td>
+                                    <td>@item.S_NAME</td>
+                                    <td>@item.S_EMPLOYEE_NAME</td>
+                                    <td>@item.S_CONTACT</td>
+                                    <td>@item.S_ADDRESS</td>
+                                    <td>@item.D_CREATED.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.S_STATUS</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit","Store", new { s_id = @item.S_ID })" style="margin-left: 5px">Edit</a>
 
-                                    <a href="@Url.Action("InActiveStore","Store", new { s_id = @item.S_ID })" style="margin-left: 10px;color: red" onclick="myFunction()">InActive</a>
-                                </td>
-                            </tr>
+                                        <a href="@Url.Action("InActiveStore","Store", new { s_id = @item.S_ID })" style="margin-left: 10px;color: red" onclick="myFunction()">InActive</a>
+                                    </td>
+                                </tr>
                             }
 
                         </tbody>
@@ -80,25 +80,8 @@
 
     </div>
     <!-- /.container-fluid -->
-    <!-- Delete Modal-->
-    @*<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">DELETE</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Do you want to delete this employee ?</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="@Url.Action("DeleteEmployee","Home")">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>*@
+    <!-- Edit Modal-->
+    
 
     <script>
         function myFunction() {

@@ -29,6 +29,14 @@ namespace E_Project.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model)
         {
+            if (model.account == null)
+            {
+                model.account = "";
+            }
+            if (model.password == null)
+            {
+                model.password = "";
+            }
             var checkLogin = new AccountModel().Login(model.account, model.password);
             if (checkLogin != 0 && ModelState.IsValid)
             {

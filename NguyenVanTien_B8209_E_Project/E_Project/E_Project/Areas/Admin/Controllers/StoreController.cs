@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using E_Project.Areas.Admin.Model;
 using E_Project.Areas.Admin.Utils;
 using ModelEntity;
+using ModelEntity.Frameworks;
+
 namespace E_Project.Areas.Admin.Controllers
 {
     public class StoreController : Controller
@@ -34,7 +36,9 @@ namespace E_Project.Areas.Admin.Controllers
         // GET: Admin/Store/Create
         public ActionResult Create()
         {
-            return View();
+            var storeModel = new StoreModel();
+            var store = storeModel.getListStore();
+            return View(store);
         }
 
         // POST: Admin/Store/Create
@@ -54,20 +58,32 @@ namespace E_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Store/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string s_id)
         {
-            return View();
+            var storeModel = new StoreModel();
+            var store = storeModel.getStoreById(s_id);
+            return View(store);
         }
 
         // POST: Admin/Store/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        
+        public ActionResult Edit(TB_STORE store)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if ((store.S_NAME != null && !store.S_NAME.Equals("")) && (store.S_ADDRESS != null && !store.S_ADDRESS.Equals("")) && (store.S_CONTACT != null && !store.S_CONTACT.Equals("")))
+                {
+                    var storeModel = new StoreModel();
+                    storeModel.updateStoreById(store);
+                    
+                    return RedirectToAction("List");
+                    
+                } else
+                {
+                    ModelState.AddModelError("", "Update failed, please try again !");
+                    return View();
+                }
             }
             catch
             {
