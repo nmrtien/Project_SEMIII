@@ -13,6 +13,7 @@ namespace ModelEntity.Frameworks
         }
 
         public virtual DbSet<TB_ACCOUNT> TB_ACCOUNT { get; set; }
+        public virtual DbSet<TB_DEPARTMENT> TB_DEPARTMENT { get; set; }
         public virtual DbSet<TB_STORE> TB_STORE { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -42,13 +43,29 @@ namespace ModelEntity.Frameworks
                 .IsUnicode(false);
 
             modelBuilder.Entity<TB_ACCOUNT>()
-                .Property(e => e.S_STATUS)
+                .Property(e => e.S_TECHNICAL)
                 .IsUnicode(false);
 
             modelBuilder.Entity<TB_ACCOUNT>()
-                .HasMany(e => e.TB_STORE)
-                .WithOptional(e => e.TB_ACCOUNT)
-                .HasForeignKey(e => e.S_EMPLOYEE_ID);
+                .Property(e => e.S_STATUS)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TB_DEPARTMENT>()
+                .Property(e => e.S_NAME)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TB_DEPARTMENT>()
+                .Property(e => e.S_CONTACT)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TB_DEPARTMENT>()
+                .Property(e => e.S_STATUS)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TB_DEPARTMENT>()
+                .HasMany(e => e.TB_ACCOUNT)
+                .WithOptional(e => e.TB_DEPARTMENT)
+                .HasForeignKey(e => e.N_DEPARTMENT_ID);
 
             modelBuilder.Entity<TB_STORE>()
                 .Property(e => e.S_NAME)
@@ -65,6 +82,11 @@ namespace ModelEntity.Frameworks
             modelBuilder.Entity<TB_STORE>()
                 .Property(e => e.S_STATUS)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<TB_STORE>()
+                .HasMany(e => e.TB_ACCOUNT)
+                .WithOptional(e => e.TB_STORE)
+                .HasForeignKey(e => e.N_STORE_ID);
         }
     }
 }

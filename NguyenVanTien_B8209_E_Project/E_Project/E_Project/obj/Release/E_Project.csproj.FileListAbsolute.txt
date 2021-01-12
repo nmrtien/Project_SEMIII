@@ -170,8 +170,8 @@ A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\
 A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csproj.CopyComplete
 A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.dll
 A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.pdb
-G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csprojAssemblyReference.cache
-G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csproj.CoreCompileInputs.cache
+G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.dll.config
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\E_Project.pdb
@@ -186,7 +186,6 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_P
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.CSharp.Core.targets
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
@@ -203,7 +202,6 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_P
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.exe
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.exe.config
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\vbc.rsp
-G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\VBCSCompiler.exe.config
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Antlr3.Runtime.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\EntityFramework.dll
@@ -233,6 +231,8 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_P
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Deployment.xml
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Web.WebPages.Razor.xml
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\Antlr3.Runtime.pdb
+G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csprojAssemblyReference.cache
+G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csproj.CoreCompileInputs.cache
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csproj.CopyComplete
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.pdb

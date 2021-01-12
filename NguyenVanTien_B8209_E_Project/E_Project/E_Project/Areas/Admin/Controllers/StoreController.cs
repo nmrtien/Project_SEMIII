@@ -20,12 +20,12 @@ namespace E_Project.Areas.Admin.Controllers
             return View(storeList);
         }
 
-        public ActionResult UpdateStatusStore(string s_id, string s_status)
+        public ActionResult UpdateStatusStore(int n_id, string s_status)
         {
             var storeDBModel = new StoreDBModel();
             
             s_status = s_status.Equals("Active") ? "InActive" : "Active";
-            storeDBModel.updateStatusStore(s_id, s_status);
+            storeDBModel.updateStatusStore(n_id, s_status);
             return RedirectToAction("List", "Store");
         }
 
@@ -39,11 +39,6 @@ namespace E_Project.Areas.Admin.Controllers
         public ActionResult Create()
         {
             var storeModel = new StoreModel();
-            var accountModel = new AccountDBModel();
-            List<TB_ACCOUNT> accountList = accountModel.getDropDownEmployee();
-            storeModel.listAccount = new List<AccountModel>();
-            //storeModel.listAccount.Add(new AccountModel(0, "SELECT AN MANAGER"));
-            accountList.ForEach(account => storeModel.listAccount.Add(new AccountModel(account.S_ID, account.S_FULLNAME)));
             return View(storeModel);
         }
 
@@ -53,14 +48,12 @@ namespace E_Project.Areas.Admin.Controllers
         {
             try
             {
-                int employeeID = Request.Form["ddlAccount"] == null ? 0 : Int32.Parse(Request.Form["ddlAccount"]);
 
                 var storeDBModel = new StoreDBModel();
                 TB_STORE store = new TB_STORE();
                 store.S_NAME = storeModel.storeName;
                 store.S_CONTACT = storeModel.contact;
                 store.S_ADDRESS = storeModel.address;
-                store.S_EMPLOYEE_ID = employeeID;
                 storeDBModel.createStore(store);
 
                 return RedirectToAction("List");
@@ -72,22 +65,16 @@ namespace E_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Store/Edit/5
-        public ActionResult Edit(int s_id)
+        public ActionResult Edit(int n_id)
         {
             var storeDBModel = new StoreDBModel();
             var storeModel = new StoreModel();
-            var accountModel = new AccountDBModel();
-            List<TB_ACCOUNT> accountList = accountModel.getDropDownEmployee();
-            storeModel.listAccount = new List<AccountModel>();
-            storeModel.listAccount.Add(new AccountModel(0, "SELECT ANOTHER MANAGER"));
-            accountList.ForEach(account => storeModel.listAccount.Add(new AccountModel(account.S_ID, account.S_FULLNAME)));
-            var store = storeDBModel.getStoreById(s_id);
-            storeModel.id = store.S_ID;
+            var store = storeDBModel.getStoreById(n_id);
+            storeModel.id = store.N_ID;
             storeModel.storeName = store.S_NAME;
             storeModel.contact = store.S_CONTACT;
             storeModel.address = store.S_ADDRESS;
             storeModel.status = store.S_STATUS;
-            storeModel.employeeId = store.S_EMPLOYEE_ID;
             return View(storeModel);
         }
 
@@ -99,14 +86,13 @@ namespace E_Project.Areas.Admin.Controllers
             try
             {
                 
-                    int employeeID = Request.Form["ddlAccount"] == null ? 0 : Int32.Parse(Request.Form["ddlAccount"]);
+                    
                     var storeDBModel = new StoreDBModel();
                     TB_STORE store = new TB_STORE();
-                store.S_ID = storeModel.id;
+                store.N_ID = storeModel.id;
                 store.S_NAME = storeModel.storeName;
                 store.S_ADDRESS = storeModel.address;
                 store.S_CONTACT = storeModel.contact;
-                store.S_EMPLOYEE_ID = employeeID;
                 storeDBModel.updateStoreById(store);
                     
                     return RedirectToAction("List");

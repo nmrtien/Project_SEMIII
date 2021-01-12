@@ -120,10 +120,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoreController.cs" />
     <Compile Include="Areas\Admin\Model\AccountModel.cs" />
+    <Compile Include="Areas\Admin\Model\AccountTypeModel.cs" />
+    <Compile Include="Areas\Admin\Model\DropDownModel.cs" />
     <Compile Include="Areas\Admin\Model\LoginModel.cs" />
     <Compile Include="Areas\Admin\Model\StoreModel.cs" />
     <Compile Include="Areas\Admin\Utils\InfoSession.cs" />
@@ -1831,7 +1833,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\View.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\List.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_layout.cshtml" />
     <Content Include="Assets\Admin\scss\navs\_global.scss" />
     <Content Include="Assets\Admin\scss\navs\_sidebar.scss" />
@@ -2010,6 +2012,7 @@
     <Content Include="Areas\Admin\Views\Store\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Store\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

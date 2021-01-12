@@ -28,7 +28,6 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\Mod
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.SqlServer.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.xml
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Release\EntityFramework.SqlServer.xml
-G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csprojAssemblyReference.cache
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csproj.CoreCompileInputs.cache
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.csproj.CopyComplete
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Release\ModelEntity.dll

@@ -42,9 +42,7 @@
 
                             </div>
 
-                            <div class="form-group col-lg-12">
-                                @Html.DropDownList("ddlAccount", new SelectList(Model.listAccount, "id", "employeeName"), new { @class = "form-control form-control-user" })
-                            </div>
+                         
 
                             <div class="form-group col-lg-12">
                                 @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Store name...", @readOnly = "true" })

@@ -33,7 +33,6 @@
                             <tr style="background-color: #e0f9f0;">
                                 <th>ID</th>
                                 <th>Store Name</th>
-                                <th>Manager</th>
                                 <th>Contact</th>
                                 <th>Address</th>
                                 <th>Created Date</th>
@@ -45,7 +44,6 @@
                             <tr style="background-color: #e0f9f0;">
                                 <th>ID</th>
                                 <th>Store Name</th>
-                                <th>Manager</th>
                                 <th>Contact</th>
                                 <th>Address</th>
                                 <th>Created Date</th>
@@ -57,25 +55,24 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.S_ID</td>
+                                    <td>@item.N_ID</td>
                                     <td>@item.S_NAME</td>
-                                    <td>@item.S_EMPLOYEE_NAME</td>
                                     <td>@item.S_CONTACT</td>
                                     <td>@item.S_ADDRESS</td>
                                     <td>@item.D_CREATED.ToString("dd/MM/yyyy")</td>
                                     <td>@item.S_STATUS</td>
                                     <td>
-                                        <a href="@Url.Action("Edit","Store", new { s_id = @item.S_ID })" style="margin-left: 5px">Edit</a>
+                                        <a href="@Url.Action("Edit","Store", new { n_id = @item.N_ID })" style="margin-left: 5px">Edit</a>
 
                                         @if (@item.S_STATUS.Equals("Active"))
                                         {
-                                    <a href="@Url.Action("UpdateStatusStore","Store", new { s_id = @item.S_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                    <a href="@Url.Action("UpdateStatusStore","Store", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                         InActive
                                     </a>
                                         }
                                         else
                                         {
-                                            <a href="@Url.Action("UpdateStatusStore","Store", new { s_id = @item.S_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                            <a href="@Url.Action("UpdateStatusStore","Store", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                                 Active
                                             </a>
                                         }

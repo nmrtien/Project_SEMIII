@@ -6,10 +6,10 @@ namespace ModelEntity.Frameworks
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class TB_STORE
+    public partial class TB_DEPARTMENT
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TB_STORE()
+        public TB_DEPARTMENT()
         {
             TB_ACCOUNT = new HashSet<TB_ACCOUNT>();
         }
@@ -27,10 +27,6 @@ namespace ModelEntity.Frameworks
 
         [Required]
         [StringLength(50)]
-        public string S_ADDRESS { get; set; }
-
-        [Required]
-        [StringLength(50)]
         public string S_STATUS { get; set; }
 
         [Column(TypeName = "date")]
@@ -38,6 +34,5 @@ namespace ModelEntity.Frameworks
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_ACCOUNT> TB_ACCOUNT { get; set; }
-
     }
 }

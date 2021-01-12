@@ -15,17 +15,13 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">List Employee</h1>
-        @*<p class="mb-4">
-                DataTables is a third party plugin that is used to generate the demo table below.
-                For more information about DataTables, please visit the <a target="_blank"
-                                                                           href="https://datatables.net">official DataTables documentation</a>.
-            </p>*@
+        <h1 class="h3 mb-2 text-gray-800">List Account</h1>
+
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><a href="#">Add new</a></h6>
+                <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("Create","Account")">Add new</a></h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive" style="overflow-x: hidden !important">
@@ -40,6 +36,9 @@
                                 <th>Phone</th>
                                 <th>Address</th>
                                 <th>Bithday</th>
+                                <th>Technical</th>
+                                <th>Store</th>
+                                <th>Department</th>
                                 <th>Status</th>
                                 <th style="width: 120px !important; min-width: 120px !important"></th>
                             </tr>
@@ -54,6 +53,9 @@
                                 <th>Phone</th>
                                 <th>Address</th>
                                 <th>Bithday</th>
+                                <th>Technical</th>
+                                <th>Store</th>
+                                <th>Department</th>
                                 <th>Status</th>
                                 <th></th>
                             </tr>
@@ -62,7 +64,7 @@
                             @foreach (var item in Model)
                             {
                             <tr>
-                                <td>@item.S_ID</td>
+                                <td>@item.N_ID</td>
                                 <td>@item.S_ACCOUNT</td>
                                 <td>@item.S_PASSWORD</td>
                                 <td>@item.S_TYPE</td>
@@ -70,23 +72,26 @@
                                 <td>@item.S_PHONE</td>
                                 <td>@item.S_ADDRESS</td>
                                 <td>@item.D_BIRTHDAY.ToString("dd/MM/yyyy")</td>
+                                <td>@item.S_TECHNICAL</td>
+                                <td>@item.STORE_NAME</td>
+                                <td>@item.DEPARTMENT_NAME</td>
                                 <td>@item.S_STATUS</td>
                                 <td>
                                     <a href="#" style="margin-left: 5px">Edit</a>
 
                                     @if (@item.S_STATUS.Equals("Active"))
                                     {
-                                        <a href="@Url.Action("UpdateStatusEmployee","Home", new { s_id = @item.S_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                        <a href="@Url.Action("UpdateStatusAccount","Account", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                             InActive
                                         </a>
                                     }
                                     else
                                     {
-                                        <a href="@Url.Action("UpdateStatusEmployee","Home", new { s_id = @item.S_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                        <a href="@Url.Action("UpdateStatusAccount","Account", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                             Active
                                         </a>
                                     }
-                                    
+
                                 </td>
                             </tr>
                             }
@@ -101,7 +106,7 @@
 
     <script>
         function myFunction() {
-            alert("Update Employee success!");
+            alert("Update Account success!");
         }
     </script>
 </body>

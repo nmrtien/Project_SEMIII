@@ -56,6 +56,7 @@
     <Compile Include="AccountDBModel.cs" />
     <Compile Include="Frameworks\E_ProjectDbContext.cs" />
     <Compile Include="Frameworks\TB_ACCOUNT.cs" />
+    <Compile Include="Frameworks\TB_DEPARTMENT.cs" />
     <Compile Include="Frameworks\TB_STORE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreDBModel.cs" />
