@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDBModel.cs" />
+    <Compile Include="DepartmentDBModel.cs" />
     <Compile Include="Frameworks\E_ProjectDbContext.cs" />
     <Compile Include="Frameworks\TB_ACCOUNT.cs" />
     <Compile Include="Frameworks\TB_DEPARTMENT.cs" />

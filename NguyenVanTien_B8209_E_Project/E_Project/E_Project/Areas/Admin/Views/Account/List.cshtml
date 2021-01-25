@@ -77,7 +77,7 @@
                                 <td>@item.DEPARTMENT_NAME</td>
                                 <td>@item.S_STATUS</td>
                                 <td>
-                                    <a href="#" style="margin-left: 5px">Edit</a>
+                                    <a href="@Url.Action("Edit","Account", new { n_id = @item.N_ID })" style="margin-left: 5px">Edit</a>
 
                                     @if (@item.S_STATUS.Equals("Active"))
                                     {

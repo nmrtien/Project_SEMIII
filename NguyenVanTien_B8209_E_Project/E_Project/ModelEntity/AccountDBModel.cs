@@ -113,5 +113,32 @@ namespace ModelEntity
 
             return result;
         }
+
+        public TB_ACCOUNT getAccountById(int id)
+        {
+            object[] sqlParams =
+            {
+                new SqlParameter("@N_ID", id)
+            };
+            TB_ACCOUNT result = context.Database.SqlQuery<TB_ACCOUNT>("Usp_GetAccountById @N_ID", sqlParams).SingleOrDefault();
+
+            return result;
+        }
+
+        public object updateAccountById(TB_ACCOUNT model)
+        {
+            object[] sqlParams =
+            {
+                new SqlParameter("@N_ID", model.N_ID),
+                new SqlParameter("@S_FULLNAME", model.S_FULLNAME),
+                new SqlParameter("@S_PHONE", model.S_PHONE),
+                new SqlParameter("@S_ADDRESS", model.S_ADDRESS),
+                new SqlParameter("@S_TECHNICAL", model.S_TECHNICAL),
+                new SqlParameter("@S_PASSWORD", model.S_PASSWORD)
+            };
+            var result = context.Database.SqlQuery<object>("Usp_updateAccountById @N_ID,@S_FULLNAME,@S_PHONE,@S_ADDRESS,@S_TECHNICAL,@S_PASSWORD", sqlParams).SingleOrDefault();
+
+            return result;
+        }
     }
 }

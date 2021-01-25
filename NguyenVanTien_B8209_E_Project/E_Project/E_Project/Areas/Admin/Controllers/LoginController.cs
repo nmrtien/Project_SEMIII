@@ -42,7 +42,7 @@ namespace E_Project.Areas.Admin.Controllers
             {
                 var result = new AccountDBModel().getAccount(model.account, model.password);
                 SessionHelper.SetSession(new InfoSession() { id = result.N_ID , account = result.S_ACCOUNT, password = result.S_PASSWORD, fullName = result.S_FULLNAME, address = result.S_ADDRESS, birthDay = result.D_BIRTHDAY });
-                return RedirectToAction("List", "Account");
+                return RedirectToAction("List", "Department");
             } else
             {
                 ModelState.AddModelError("", "Login failed, please try again !");

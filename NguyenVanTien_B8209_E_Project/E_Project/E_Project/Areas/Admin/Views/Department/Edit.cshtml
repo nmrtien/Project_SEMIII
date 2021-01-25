@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+@model E_Project.Areas.Admin.Model.DepartmentModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+
+                <div class="col-lg-12 text-center">
+                    <div class="p-5 text-center">
+                        <div class="form-group col-lg-12 text-center">
+                            <h1 class="h4 text-gray-900 mb-4">EDIT DEPARTMENT</h1>
+                        </div>
+
+                        @using (Html.BeginForm())
+                        {
+
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
+
+                            </div>
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.departmentName, new { @class = "form-control form-control-user", @placeholder = "Department name..." })
+
+                            </div>
+
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
+
+                            </div>
+
+
+
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Department name...", @readOnly = "true" })
+
+                            </div>
+
+
+
+                            <div class="form-group col-lg-6 row">
+                                <div class="form-group col-lg-2 row">
+                                    <a href="@Url.Action("List","Department")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
+                                </div>
+                                <div class="form-group col-lg-2 row">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
+                                </div>
+
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            alert("Update Department success!");
+        }
+    </script>
+</body>
+</html>
+

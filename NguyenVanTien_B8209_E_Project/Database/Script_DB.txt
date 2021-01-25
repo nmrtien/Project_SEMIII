@@ -103,6 +103,8 @@ DROP TABLE [TB_ACCOUNT];
 GO
 
 
+/* ============= LOGIN ============= */
+
 CREATE PROCEDURE Usp_Login 
 	@S_ACCOUNT varchar(50),
 	@S_PASSWORD varchar(50)
@@ -121,6 +123,9 @@ LEFT JOIN TB_DEPARTMENT as d ON acc.N_DEPARTMENT_ID = d.N_ID
 WHERE acc.S_ACCOUNT = @S_ACCOUNT AND acc.S_PASSWORD = @S_PASSWORD AND (acc.S_TYPE = 'admin' OR acc.S_TYPE = 'employee' OR acc.S_TYPE = 'manager');
 
 GO
+
+/* ============= MANAGER ============= */
+
 
 CREATE PROCEDURE Usp_GetListManager
 AS
@@ -165,9 +170,93 @@ SET S_TYPE = @S_TYPE
 WHERE N_ID = @N_ID;
 GO
 
+CREATE PROCEDURE Usp_InsertAccount
+	@S_ACCOUNT varchar(50),
+	@S_PASSWORD varchar(50),
+	@S_TYPE varchar(50),
+	@S_FULLNAME varchar(50),
+	@S_PHONE varchar(50),
+	@S_ADDRESS varchar(50),
+	@S_TECHNICAL varchar(50),
+	@D_BIRTHDAY date,
+	@N_STORE_ID int,
+	@N_DEPARTMENT_ID int
+AS
+INSERT INTO TB_ACCOUNT VALUES(@S_ACCOUNT,@S_PASSWORD,@S_TYPE,@S_FULLNAME,@S_PHONE,@S_ADDRESS,@S_TECHNICAL,'InActive',@D_BIRTHDAY,@N_DEPARTMENT_ID,@N_STORE_ID);
+GO
+
+
+CREATE PROCEDURE Usp_updateAccountById
+	@N_ID int,
+	@S_FULLNAME varchar(50),
+	@S_PHONE varchar(50),
+	@S_ADDRESS varchar(50),
+	@S_TECHNICAL varchar(50),
+	@S_PASSWORD varchar(50)
+AS
+
+UPDATE TB_ACCOUNT
+SET S_FULLNAME = @S_FULLNAME,
+	S_PHONE = @S_PHONE,
+	S_ADDRESS = @S_ADDRESS,
+	S_TECHNICAL = @S_TECHNICAL,
+	S_PASSWORD = @S_PASSWORD
+WHERE N_ID = @N_ID;
+
+GO
+
+CREATE PROCEDURE Usp_GetAccountById 
+	@N_ID int
+AS
+SELECT s.*, NULL AS STORE_NAME, NULL AS DEPARTMENT_NAME FROM TB_ACCOUNT AS s
+WHERE s.N_ID = @N_ID;
+
+GO
+
+/* ============= STORE ============= */
+
 CREATE PROCEDURE Usp_GetAllStore
 AS
 SELECT * FROM TB_STORE;
+GO
+
+CREATE PROCEDURE Usp_InsertStore
+	@S_NAME varchar(50),
+	@S_ADDRESS varchar(50),
+	@S_CONTACT varchar(50)
+AS
+
+INSERT INTO TB_STORE VALUES(@S_NAME,@S_CONTACT,@S_ADDRESS,'InActive',GETDATE());
+GO
+
+CREATE PROCEDURE Usp_changeManagerStore
+	@N_ID int,
+	@N_STORE_ID int
+AS
+BEGIN TRAN
+BEGIN TRY
+   -- Statement 1
+   UPDATE TB_ACCOUNT
+SET S_TYPE = 'employee'
+
+WHERE N_ID = @N_ID;
+
+   -- Statement 2
+   UPDATE TB_ACCOUNT
+SET N_STORE_ID = @N_STORE_ID
+
+WHERE N_ID = @N_ID;
+  -- ...
+COMMIT
+END TRY
+BEGIN CATCH
+   ROLLBACK
+   DECLARE @ErrorMessage VARCHAR(2000)
+   SELECT @ErrorMessage = 'Error: ' + ERROR_MESSAGE()
+   RAISERROR(@ErrorMessage, 16, 1)
+END CATCH
+
+
 GO
 
 CREATE PROCEDURE Usp_UpdateStatusStore
@@ -201,35 +290,7 @@ WHERE N_ID = @N_ID;
 
 GO
 
-CREATE PROCEDURE Usp_changeManagerStore
-	@N_ID int,
-	@N_STORE_ID int
-AS
-BEGIN TRAN
-BEGIN TRY
-   -- Statement 1
-   UPDATE TB_ACCOUNT
-SET S_TYPE = 'employee'
-
-WHERE N_ID = @N_ID;
-
-   -- Statement 2
-   UPDATE TB_ACCOUNT
-SET N_STORE_ID = @N_STORE_ID
-
-WHERE N_ID = @N_ID;
-  -- ...
-COMMIT
-END TRY
-BEGIN CATCH
-   ROLLBACK
-   DECLARE @ErrorMessage VARCHAR(2000)
-   SELECT @ErrorMessage = 'Error: ' + ERROR_MESSAGE()
-   RAISERROR(@ErrorMessage, 16, 1)
-END CATCH
-
-
-GO
+/* ============= DEPARTMENT ============= */
 
 CREATE PROCEDURE Usp_GetAllDepartment 
 AS
@@ -238,26 +299,40 @@ SELECT * FROM TB_DEPARTMENT
 
 GO
 
-CREATE PROCEDURE Usp_InsertStore
+CREATE PROCEDURE Usp_GetDepartmentById 
+	@N_ID int
+AS
+SELECT s.* FROM TB_DEPARTMENT AS s
+WHERE s.N_ID = @N_ID;
+
+GO
+
+CREATE PROCEDURE Usp_updateDepartmentById
+	@N_ID int,
 	@S_NAME varchar(50),
-	@S_ADDRESS varchar(50),
 	@S_CONTACT varchar(50)
 AS
 
-INSERT INTO TB_STORE VALUES(@S_NAME,@S_CONTACT,@S_ADDRESS,'InActive',GETDATE());
+UPDATE TB_DEPARTMENT
+SET S_NAME = @S_NAME,
+	S_CONTACT = @S_CONTACT
+WHERE N_ID = @N_ID;
+
 GO
 
-CREATE PROCEDURE Usp_InsertAccount
-	@S_ACCOUNT varchar(50),
-	@S_PASSWORD varchar(50),
-	@S_TYPE varchar(50),
-	@S_FULLNAME varchar(50),
-	@S_PHONE varchar(50),
-	@S_ADDRESS varchar(50),
-	@S_TECHNICAL varchar(50),
-	@D_BIRTHDAY date,
-	@N_STORE_ID int,
-	@N_DEPARTMENT_ID int
+CREATE PROCEDURE Usp_UpdateStatusDepartment
+	@N_ID int,
+	@S_STATUS varchar(50)
 AS
-INSERT INTO TB_ACCOUNT VALUES(@S_ACCOUNT,@S_PASSWORD,@S_TYPE,@S_FULLNAME,@S_PHONE,@S_ADDRESS,'InActive',@S_TECHNICAL,@D_BIRTHDAY,@N_DEPARTMENT_ID,@N_STORE_ID);
+UPDATE TB_DEPARTMENT
+SET S_STATUS = @S_STATUS
+WHERE N_ID = @N_ID;
+GO
+
+CREATE PROCEDURE Usp_InsertDepartment
+	@S_NAME varchar(50),
+	@S_CONTACT varchar(50)
+AS
+
+INSERT INTO TB_DEPARTMENT VALUES(@S_NAME,@S_CONTACT,'InActive',GETDATE());
 GO

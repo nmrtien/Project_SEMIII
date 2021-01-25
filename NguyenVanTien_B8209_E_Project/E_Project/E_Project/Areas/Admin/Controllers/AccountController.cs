@@ -17,10 +17,7 @@ namespace E_Project.Areas.Admin.Controllers
 
         public ActionResult List(string type)
         {
-            InfoSession model = new InfoSession();
-
-            model = SessionHelper.GetInfoSession();
-            Session["infoSession"] = model;
+            
             var accountModel = new AccountDBModel();
             if (type == null)
             {
@@ -90,6 +87,51 @@ namespace E_Project.Areas.Admin.Controllers
                 accountDBModel.createAccount(account);
 
                 return RedirectToAction("List");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Edit(int n_id)
+        {
+            var model = new AccountDBModel();
+            var accountModel = new AccountModel();
+            var account = model.getAccountById(n_id);
+            accountModel.id = account.N_ID;
+            accountModel.fullName = account.S_FULLNAME;
+            accountModel.phone = account.S_PHONE;
+            accountModel.address = account.S_ADDRESS;
+            accountModel.technical = account.S_TECHNICAL;
+            accountModel.account = account.S_ACCOUNT;
+            accountModel.password = account.S_PASSWORD;
+            accountModel.type = account.S_TYPE.Equals("employee") ? 0 : 1;
+            return View(accountModel);
+        }
+
+        // POST: Admin/Store/Edit/5
+        [HttpPost]
+
+        public ActionResult Edit(AccountModel accountModel)
+        {
+            try
+            {
+
+
+                var model = new AccountDBModel();
+                TB_ACCOUNT account = new TB_ACCOUNT();
+                account.N_ID = accountModel.id;
+                account.S_FULLNAME = accountModel.fullName;
+                account.S_PHONE = accountModel.phone;
+                account.S_ADDRESS = accountModel.address;
+                account.S_TECHNICAL = accountModel.technical;
+                account.S_PASSWORD = accountModel.password;
+                model.updateAccountById(account);
+
+                return RedirectToAction("List");
+
+
             }
             catch
             {
