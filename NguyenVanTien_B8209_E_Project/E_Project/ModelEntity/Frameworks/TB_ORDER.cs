@@ -6,22 +6,20 @@ namespace ModelEntity.Frameworks
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class TB_ODER
+    public partial class TB_ORDER
     {
         [Key]
         public int N_ID { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string N_AMOUNT { get; set; }
+        public double N_AMOUNT { get; set; }
+
+        [Required]
+        public int N_TOTAL { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string N_TOTAL { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string S_NAME { get; set; }
+        public string S_CUSTOMER_NAME { get; set; }
 
         [Required]
         [StringLength(50)]

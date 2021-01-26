@@ -236,3 +236,9 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_P
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.csproj.CopyComplete
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\E_Project\obj\Release\E_Project.pdb
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Buffers.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Memory.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Numerics.Vectors.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Net.Http.Formatting.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\E_Project\bin\System.Net.Http.Formatting.xml
