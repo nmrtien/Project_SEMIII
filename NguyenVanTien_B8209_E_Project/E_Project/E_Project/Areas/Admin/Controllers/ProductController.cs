@@ -98,7 +98,6 @@ namespace E_Project.Areas.Admin.Controllers
                 product.S_NAME = model.productName;
                 product.N_PRICE = model.price;
                 product.S_TYPE = model.type;
-                product.S_DETAIL = model.detail;
                 product.S_DESCRIPTION = model.description;
                 modelDB.updateProductById(product);
 

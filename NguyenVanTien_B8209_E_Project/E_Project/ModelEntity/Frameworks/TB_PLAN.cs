@@ -8,6 +8,12 @@ namespace ModelEntity.Frameworks
 
     public partial class TB_PLAN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_PLAN()
+        {
+            TB_PLAN_DETAIL = new HashSet<TB_PLAN_DETAIL>();
+        }
+
         [Key]
         public int N_ID { get; set; }
 
@@ -33,5 +39,8 @@ namespace ModelEntity.Frameworks
 
         [Column(TypeName = "date")]
         public DateTime D_CREATED { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_PLAN_DETAIL> TB_PLAN_DETAIL { get; set; }
     }
 }

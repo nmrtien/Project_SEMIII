@@ -25,54 +25,61 @@
                         @using (Html.BeginForm())
                         {
 
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">ID</label>
+                        @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
+
+                    </div>
+
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">PRODUCT NAME</label>
                                 @Html.TextBoxFor(model => model.productName, new { @class = "form-control form-control-user", @placeholder = "PRODUCT NAME..." })
 
                             </div>
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">PRICE</label>
                                 @Html.TextBoxFor(model => model.price, new { @class = "form-control form-control-user", @placeholder = "PRICE...", @type = "number" })
 
                             </div>
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">TYPE</label>
                                 @Html.TextBoxFor(model => model.type, new { @class = "form-control form-control-user", @placeholder = "TYPE..." })
 
                             </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.detail, new { @class = "form-control form-control-user", @placeholder = "PRODUCT DETAIL..." })
 
-                            </div>
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">DESCRIPTION</label>
                                 @Html.TextBoxFor(model => model.description, new { @class = "form-control form-control-user", @placeholder = "DESCRIPTION..." })
 
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="image" src="img_submit.gif" alt="Submit" width="100" height="100">
+
+                                <input type="image" src="~/Assets/Admin/img/@Model.detail" width="400" height="300" style="float:left !important; margin-bottom: 20px !important">
+                                
                             </div>
-                                <div class="form-group col-lg-12">
-                                    @Html.TextBoxFor(model => model.createdDate, new { @class = "form-control form-control-user", @placeholder = "Created Date...", @readOnly = "true" })
+                            
 
-                                </div>
-
-                                <div class="form-group col-lg-12">
-                                    @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Status...", @readOnly = "true" })
-
-                                </div>
-
-
-
-                                <div class="form-group col-lg-6 row">
-                                    <div class="form-group col-lg-2 row">
-                                        <a href="@Url.Action("List","Product")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
-                                    </div>
-                                    <div class="form-group col-lg-2 row">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
-                                    </div>
-
-                                </div>
-                                }
-
+                            <div class="form-group col-lg-12">
+                                
+                                @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Status...", @readOnly = "true" })
 
                             </div>
+
+
+
+                            <div class="form-group col-lg-6 row">
+                                <div class="form-group col-lg-2 row">
+                                    <a href="@Url.Action("List","Product")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
+                                </div>
+                                <div class="form-group col-lg-2 row">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
+                                </div>
+
+                            </div>
+                        }
+
+
+                    </div>
                         </div>
             </div>
         </div>

@@ -11,7 +11,8 @@ namespace ModelEntity.Frameworks
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TB_PRODUCT()
         {
-            TB_CUSTOMER = new HashSet<TB_CUSTOMER>();
+            TB_ODER = new HashSet<TB_ODER>();
+            TB_PLAN_DETAIL = new HashSet<TB_PLAN_DETAIL>();
         }
 
         [Key]
@@ -43,6 +44,9 @@ namespace ModelEntity.Frameworks
         public DateTime D_CREATED { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_CUSTOMER> TB_CUSTOMER { get; set; }
+        public virtual ICollection<TB_ODER> TB_ODER { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_PLAN_DETAIL> TB_PLAN_DETAIL { get; set; }
     }
 }

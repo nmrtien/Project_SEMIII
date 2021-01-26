@@ -25,14 +25,16 @@
                         @using (Html.BeginForm())
                         {
 
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.departmentName, new { @class = "form-control form-control-user", @placeholder = "DEPARTMENT NAME..." })
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">NAME</label>
+                        @Html.TextBoxFor(model => model.departmentName, new { @class = "form-control form-control-user", @placeholder = "DEPARTMENT NAME..." })
 
-                            </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "CONTACT..." })
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">CONTACT</label>
+                        @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "CONTACT..." })
 
-                            </div>
+                    </div>
 
                             <div class="form-group col-lg-6 row">
                                 <div class="form-group col-lg-2 row">

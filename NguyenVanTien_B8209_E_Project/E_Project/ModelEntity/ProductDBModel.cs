@@ -55,10 +55,9 @@ namespace ModelEntity
                 new SqlParameter("@S_NAME", model.S_NAME),
                 new SqlParameter("@N_PRICE", model.N_PRICE),
                 new SqlParameter("@S_TYPE", model.S_TYPE),
-                new SqlParameter("@S_DETAIL", model.S_DETAIL),
                 new SqlParameter("@S_DESCRIPTION", model.S_DESCRIPTION)
             };
-            var result = context.Database.SqlQuery<object>("Usp_updateProductById @N_ID,@S_NAME,@N_PRICE,@S_TYPE,@S_DETAIL,@S_DESCRIPTION", sqlParams).SingleOrDefault();
+            var result = context.Database.SqlQuery<object>("Usp_updateProductById @N_ID,@S_NAME,@N_PRICE,@S_TYPE,@S_DESCRIPTION", sqlParams).SingleOrDefault();
 
             return result;
         }

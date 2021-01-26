@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+@model E_Project.Areas.Admin.Model.PlanModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+
+                <div class="col-lg-12 text-center">
+                    <div class="p-5 text-center">
+                        <div class="form-group col-lg-12 text-center">
+                            <h1 class="h4 text-gray-900 mb-4">EDIT PLAN</h1>
+                        </div>
+
+                        @using (Html.BeginForm())
+                        {
+
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">ID</label>
+                                @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
+
+                            </div>
+
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">PLAN NAME</label>
+                                @Html.TextBoxFor(model => model.name, new { @class = "form-control form-control-user", @placeholder = "PRODUCT NAME..." })
+
+                            </div>
+
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">TYPE</label>
+                                @Html.TextBoxFor(model => model.type, new { @class = "form-control form-control-user", @placeholder = "TYPE..." })
+
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">DETAIL</label>
+                                @Html.TextBoxFor(model => model.detail, new { @class = "form-control form-control-user", @placeholder = "DETAIL..." })
+
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">DESCRIPTION</label>
+                                @Html.TextBoxFor(model => model.description, new { @class = "form-control form-control-user", @placeholder = "DESCRIPTION..." })
+
+                            </div>
+                           
+
+                            <div class="form-group col-lg-12">
+
+                                @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Status...", @readOnly = "true" })
+
+                            </div>
+
+
+
+                            <div class="form-group col-lg-6 row">
+                                <div class="form-group col-lg-2 row">
+                                    <a href="@Url.Action("List","Plan")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
+                                </div>
+                                <div class="form-group col-lg-2 row">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
+                                </div>
+
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            alert("Update Plan success!");
+        }
+    </script>
+</body>
+</html>

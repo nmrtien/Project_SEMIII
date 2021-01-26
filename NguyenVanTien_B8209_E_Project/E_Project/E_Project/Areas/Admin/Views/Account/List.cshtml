@@ -81,13 +81,13 @@
 
                                     @if (@item.S_STATUS.Equals("Active"))
                                     {
-                                        <a href="@Url.Action("UpdateStatusAccount","Account", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                        <a href="@Url.Action("UpdateStatusAccount","Account", new { type = @item.S_TYPE, n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                             InActive
                                         </a>
                                     }
                                     else
                                     {
-                                        <a href="@Url.Action("UpdateStatusAccount","Account", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                        <a href="@Url.Action("UpdateStatusAccount","Account", new { type = @item.S_TYPE, n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                             Active
                                         </a>
                                     }

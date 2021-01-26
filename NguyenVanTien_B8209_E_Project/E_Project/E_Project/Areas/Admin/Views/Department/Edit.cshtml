@@ -25,26 +25,30 @@
                         @using (Html.BeginForm())
                         {
 
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">ID</label>
+                        @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
 
-                            </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.departmentName, new { @class = "form-control form-control-user", @placeholder = "Department name..." })
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">NAME</label>
+                        @Html.TextBoxFor(model => model.departmentName, new { @class = "form-control form-control-user", @placeholder = "Department name..." })
 
-                            </div>
+                    </div>
 
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">CONTACT</label>
+                        @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
 
-                            </div>
+                    </div>
 
 
 
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Department name...", @readOnly = "true" })
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">STATUS</label>
+                        @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Department name...", @readOnly = "true" })
 
-                            </div>
+                    </div>
 
 
 

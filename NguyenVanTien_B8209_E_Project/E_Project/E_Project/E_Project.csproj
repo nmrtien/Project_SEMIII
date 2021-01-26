@@ -121,15 +121,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PlanController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoreController.cs" />
     <Compile Include="Areas\Admin\Model\AccountModel.cs" />
     <Compile Include="Areas\Admin\Model\AccountTypeModel.cs" />
+    <Compile Include="Areas\Admin\Model\CustomerModel.cs" />
     <Compile Include="Areas\Admin\Model\DropDownModel.cs" />
     <Compile Include="Areas\Admin\Model\LoginModel.cs" />
     <Compile Include="Areas\Admin\Model\DepartmentModel.cs" />
+    <Compile Include="Areas\Admin\Model\OrderModel.cs" />
+    <Compile Include="Areas\Admin\Model\PlanModel.cs" />
     <Compile Include="Areas\Admin\Model\ProductModel.cs" />
     <Compile Include="Areas\Admin\Model\StoreModel.cs" />
     <Compile Include="Areas\Admin\Utils\InfoSession.cs" />
@@ -144,6 +150,13 @@
     <Content Include="Assets\Admin\css\sb-admin-2.css" />
     <Content Include="Assets\Admin\css\sb-admin-2.min.css" />
     <Content Include="Assets\Admin\img\img-login.jpg" />
+    <Content Include="Assets\Admin\img\Product_01.jpg" />
+    <Content Include="Assets\Admin\img\Product_02.png" />
+    <Content Include="Assets\Admin\img\Product_03.png" />
+    <Content Include="Assets\Admin\img\Product_04.jpg" />
+    <Content Include="Assets\Admin\img\Product_05.jpg" />
+    <Content Include="Assets\Admin\img\Product_06.jpg" />
+    <Content Include="Assets\Admin\img\Product_07.jpg" />
     <Content Include="Assets\Admin\img\undraw_posting_photo.svg" />
     <Content Include="Assets\Admin\img\undraw_profile.svg" />
     <Content Include="Assets\Admin\img\undraw_profile_1.svg" />
@@ -2024,6 +2037,9 @@
     <Content Include="Areas\Admin\Views\Product\List.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Plan\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Plan\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Plan\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2053,6 +2069,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Customer\" />
+    <Folder Include="Areas\Admin\Views\Order\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

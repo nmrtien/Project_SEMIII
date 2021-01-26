@@ -13,6 +13,10 @@ namespace ModelEntity.Frameworks
 
         [Required]
         [StringLength(50)]
+        public string S_CODE { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string S_NAME { get; set; }
 
         [Required]
@@ -36,10 +40,10 @@ namespace ModelEntity.Frameworks
 
         public int? N_ACCOUNT_ID { get; set; }
 
-        public int? N_PRODUCT_ID { get; set; }
+        public int? N_PLAN_DETAIL_ID { get; set; }
 
         public virtual TB_ACCOUNT TB_ACCOUNT { get; set; }
 
-        public virtual TB_PRODUCT TB_PRODUCT { get; set; }
+        public virtual TB_PLAN_DETAIL TB_PLAN_DETAIL { get; set; }
     }
 }

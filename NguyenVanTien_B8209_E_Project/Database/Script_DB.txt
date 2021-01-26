@@ -103,6 +103,100 @@ DROP TABLE [TB_ACCOUNT];
 GO
 
 
+CREATE TABLE [dbo].[TB_PRODUCT](
+	[N_ID] int identity(1,1) primary key NOT NULL,
+	[S_NAME] [varchar] (50) UNIQUE NOT NULL,
+	[N_PRICE] FLOAT NOT NULL,
+	[S_TYPE] [varchar](50) NOT NULL,
+	[S_DETAIL] [varchar](500) NOT NULL,
+	[S_DESCRIPTION] [varchar](500) NOT NULL,
+	[S_STATUS] [varchar](50) NOT NULL,
+	[D_CREATED] [DATE] NOT NULL
+	
+) ON [PRIMARY];
+
+GO
+
+DROP TABLE [TB_PRODUCT];
+
+GO
+
+CREATE TABLE [dbo].[TB_PLAN](
+	[N_ID] int identity(1,1) primary key NOT NULL,
+	[S_NAME] [varchar] (50) UNIQUE NOT NULL,
+	[S_TYPE] [varchar](50) NOT NULL,
+	[S_DETAIL] [varchar](500) NOT NULL,
+	[S_DESCRIPTION] [varchar](500) NOT NULL,
+	[S_STATUS] [varchar](50) NOT NULL,
+	[D_CREATED] [DATE] NOT NULL
+	
+) ON [PRIMARY];
+
+GO
+
+DROP TABLE [TB_PLAN];
+
+GO
+
+CREATE TABLE [dbo].[TB_PLAN_DETAIL](
+	[N_ID] int identity(1,1) primary key NOT NULL,
+	[N_AMOUNT] FLOAT NOT NULL,
+	[S_DETAIL] [varchar](500) ,
+	[S_DESCRIPTION] [varchar](500) ,
+	[D_EXPRIRE] [DATE] NOT NULL,
+	[D_EXTENED] [DATE] ,
+	[D_CREATED] [DATE] NOT NULL,
+	[N_PLAN_ID] int FOREIGN KEY REFERENCES [TB_PLAN](N_ID),
+	[N_PRODUCT_ID] int FOREIGN KEY REFERENCES [TB_PRODUCT](N_ID)
+	
+) ON [PRIMARY];
+
+GO
+
+DROP TABLE [TB_PLAN_DETAIL];
+
+GO
+
+CREATE TABLE [dbo].[TB_CUSTOMER](
+	[N_ID] int identity(1,1) primary key NOT NULL,
+	[S_CODE] [varchar] (50) UNIQUE NOT NULL,
+	[S_NAME] [varchar] (50) NOT NULL,
+	[S_PHONE] [varchar](50) NOT NULL,
+	[S_ADDRESS] [varchar](50) NOT NULL,
+	[S_DESCRIPTION] [varchar](500) NOT NULL,
+	[S_STATUS] [varchar](50) NOT NULL,
+	[D_CREATED] [DATE] NOT NULL,
+	[N_ACCOUNT_ID] int FOREIGN KEY REFERENCES [TB_ACCOUNT](N_ID),
+	[N_PLAN_DETAIL_ID] int FOREIGN KEY REFERENCES [TB_PLAN_DETAIL](N_ID)
+	
+) ON [PRIMARY];
+
+GO
+
+DROP TABLE [TB_CUSTOMER];
+
+GO
+
+CREATE TABLE [dbo].[TB_ODER](
+	[N_ID] int identity(1,1) primary key NOT NULL,
+	[N_AMOUNT] [varchar] (50) NOT NULL,
+	[N_TOTAL] [varchar] (50) NOT NULL,
+	[S_NAME] [varchar] (50) NOT NULL,
+	[S_PHONE] [varchar](50) NOT NULL,
+	[S_ADDRESS] [varchar](50) NOT NULL,
+	[S_DESCRIPTION] [varchar](500) NOT NULL,
+	[S_STATUS] [varchar](50) NOT NULL,
+	[D_CREATED] [DATE] NOT NULL,
+	[N_PRODUCT_ID] int FOREIGN KEY REFERENCES [TB_PRODUCT](N_ID)
+	
+) ON [PRIMARY];
+
+GO
+
+DROP TABLE [TB_ODER];
+
+GO
+
 /* ============= LOGIN ============= */
 
 CREATE PROCEDURE Usp_Login 
@@ -335,4 +429,111 @@ CREATE PROCEDURE Usp_InsertDepartment
 AS
 
 INSERT INTO TB_DEPARTMENT VALUES(@S_NAME,@S_CONTACT,'InActive',GETDATE());
+GO
+
+/* ============= PRODUCT ============= */
+
+CREATE PROCEDURE Usp_GetAllProduct 
+AS
+SELECT * FROM TB_PRODUCT
+ ORDER BY S_NAME;
+
+GO
+
+CREATE PROCEDURE Usp_GetProductById 
+	@N_ID int
+AS
+SELECT s.* FROM TB_PRODUCT AS s
+WHERE s.N_ID = @N_ID;
+
+GO
+
+CREATE PROCEDURE Usp_updateProductById
+	@N_ID int,
+	@S_NAME varchar(50),
+	@N_PRICE FLOAT,
+	@S_TYPE varchar(50),
+	@S_DESCRIPTION varchar(500)
+AS
+
+UPDATE TB_PRODUCT
+SET S_NAME = @S_NAME,
+	N_PRICE = @N_PRICE,
+	S_TYPE = @S_TYPE,
+	S_DESCRIPTION = @S_DESCRIPTION
+WHERE N_ID = @N_ID;
+
+GO
+
+CREATE PROCEDURE Usp_UpdateStatusProduct
+	@N_ID int,
+	@S_STATUS varchar(50)
+AS
+UPDATE TB_PRODUCT
+SET S_STATUS = @S_STATUS
+WHERE N_ID = @N_ID;
+GO
+
+CREATE PROCEDURE Usp_InsertProduct
+	@S_NAME varchar(50),
+	@N_PRICE FLOAT,
+	@S_TYPE varchar(50),
+	@S_DETAIL varchar(500),
+	@S_DESCRIPTION varchar(500)
+AS
+
+INSERT INTO TB_PRODUCT VALUES(@S_NAME,@N_PRICE,@S_TYPE,@S_DETAIL,@S_DESCRIPTION,'InActive',GETDATE());
+GO
+
+/* ============= PLAN ============= */
+
+CREATE PROCEDURE Usp_GetAllPlan 
+AS
+SELECT * FROM TB_PLAN
+ ORDER BY S_NAME;
+
+GO
+
+CREATE PROCEDURE Usp_GetPlanById 
+	@N_ID int
+AS
+SELECT s.* FROM TB_PLAN AS s
+WHERE s.N_ID = @N_ID;
+
+GO
+
+CREATE PROCEDURE Usp_updatePlanById
+	@N_ID int,
+	@S_NAME varchar(50),
+	@S_TYPE varchar(50),
+	@S_DETAIL varchar(500),
+	@S_DESCRIPTION varchar(500)
+AS
+
+UPDATE TB_PLAN
+SET S_NAME = @S_NAME,
+	S_DETAIL = @S_DETAIL,
+	S_TYPE = @S_TYPE,
+	S_DESCRIPTION = @S_DESCRIPTION
+WHERE N_ID = @N_ID;
+
+GO
+
+CREATE PROCEDURE Usp_UpdateStatusPlan
+	@N_ID int,
+	@S_STATUS varchar(50)
+AS
+UPDATE TB_PLAN
+SET S_STATUS = @S_STATUS
+WHERE N_ID = @N_ID;
+GO
+
+CREATE PROCEDURE Usp_InsertPlan
+	@S_NAME varchar(50),
+	@S_TYPE varchar(50),
+	@S_DETAIL varchar(500),
+	@S_DESCRIPTION varchar(500)
+AS
+
+INSERT INTO TB_PLAN VALUES(@S_NAME,@S_TYPE,@S_DETAIL,@S_DESCRIPTION,'InActive',GETDATE());
 GO

@@ -24,31 +24,33 @@
 
                         @using (Html.BeginForm())
                         {
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
+                            
 
-                            </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">PRODUCT NAME</label>
+                        @Html.TextBoxFor(model => model.productName, new { @class = "form-control form-control-user", @placeholder = "PRODUCT NAME..." })
 
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.productName, new { @class = "form-control form-control-user", @placeholder = "PRODUCT NAME..." })
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">PRICE</label>
+                        @Html.TextBoxFor(model => model.price, new { @class = "form-control form-control-user", @placeholder = "PRICE...", @type = "number" })
 
-                            </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.price, new { @class = "form-control form-control-user", @placeholder = "PRICE...", @type = "number" })
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">TYPE</label>
+                        @Html.TextBoxFor(model => model.type, new { @class = "form-control form-control-user", @placeholder = "TYPE..." })
 
-                            </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.type, new { @class = "form-control form-control-user", @placeholder = "TYPE..." })
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">IMAGE</label>
+                        @Html.TextBoxFor(model => model.detail, new { @class = "form-control form-control-user", @placeholder = "PRODUCT DETAIL...", @type="file", @accept= "image/png, image/jpeg" })
 
-                            </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.detail, new { @class = "form-control form-control-user", @placeholder = "PRODUCT DETAIL..." })
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="exampleInputEmail1" style="float:left !important">DESCRIPTION</label>
+                        @Html.TextBoxFor(model => model.description, new { @class = "form-control form-control-user", @placeholder = "DESCRIPTION..." })
 
-                            </div>
-                            <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.description, new { @class = "form-control form-control-user", @placeholder = "DESCRIPTION..." })
-
-                            </div>
+                    </div>
 
                             <div class="form-group col-lg-6 row">
                                 <div class="form-group col-lg-2 row">

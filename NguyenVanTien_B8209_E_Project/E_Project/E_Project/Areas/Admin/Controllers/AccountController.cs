@@ -21,6 +21,10 @@ namespace E_Project.Areas.Admin.Controllers
             var accountModel = new AccountDBModel();
             if (type == null)
             {
+                type = (string)RouteData.Values["type"];
+            }
+            if (type == null)
+            {
                 var listManager = accountModel.getListManager();
                 return View(listManager);
             } else

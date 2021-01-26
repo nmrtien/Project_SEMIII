@@ -100,14 +100,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("List","Account")">
-                    <i class="fas fa-users"></i>
-                    <span>CUSTOMER</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("List","Account")">
+                <a class="nav-link" href="@Url.Action("List","Plan")">
                     <i class="fas fa-file-signature"></i>
                     <span>PLAN</span>
                 </a>
@@ -125,6 +118,20 @@
                 <a class="nav-link" href="@Url.Action("List","Product")">
                     <i class="fab fa-product-hunt"></i>
                     <span>PRODUCT</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("List","Customer")">
+                    <i class="fas fa-users"></i>
+                    <span>CUSTOMER</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("List","Order")">
+                    <i class="fas fa-folder-minus"></i>
+                    <span>ORDER</span>
                 </a>
             </li>
 
@@ -378,7 +385,7 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">@((Session["infoSession"] as InfoSession).fullName)</span>
                                 <img class="img-profile rounded-circle"
-                                     src="~/Assets/Admin/img/undraw_profile.svg">
+                                     src="~/Assets/Admin/img/img-login.jpg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -38,6 +38,5 @@ namespace ModelEntity.Frameworks
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_ACCOUNT> TB_ACCOUNT { get; set; }
-
     }
 }
