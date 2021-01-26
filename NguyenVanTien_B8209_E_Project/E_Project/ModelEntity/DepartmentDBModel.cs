@@ -20,9 +20,9 @@ namespace ModelEntity
         public List<TB_DEPARTMENT> getListDepartment()
         {
 
-            var accountResult = context.Database.SqlQuery<TB_DEPARTMENT>("Usp_GetAllDepartment").ToList();
+            var result = context.Database.SqlQuery<TB_DEPARTMENT>("Usp_GetAllDepartment").ToList();
 
-            return accountResult;
+            return result;
         }
 
         public object updateStatusDepartment(int n_id, string s_status)

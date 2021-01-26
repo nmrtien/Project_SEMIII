@@ -2,19 +2,19 @@
 @{
     Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
 }
-@model List<ModelEntity.Frameworks.TB_DEPARTMENT>
+@model List<ModelEntity.Frameworks.TB_PRODUCT>
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Department</title>
+    <title>Product</title>
 </head>
 <body>
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">List Department</h1>
+        <h1 class="h3 mb-2 text-gray-800">List Product</h1>
         @*<p class="mb-4">
                 DataTables is a third party plugin that is used to generate the demo table below.
                 For more information about DataTables, please visit the <a target="_blank"
@@ -24,7 +24,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("Create","Department")">Add new</a></h6>
+                <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("Create","Product")">Add new</a></h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive" style="overflow-x: hidden !important">
@@ -32,8 +32,8 @@
                         <thead>
                             <tr style="background-color: #e0f9f0;">
                                 <th>ID</th>
-                                <th>Department Name</th>
-                                <th>Contact</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
                                 <th>Created Date</th>
                                 <th>Status</th>
                                 <th style="width: 120px !important; min-width: 120px !important"></th>
@@ -42,8 +42,8 @@
                         <tfoot>
                             <tr style="background-color: #e0f9f0;">
                                 <th>ID</th>
-                                <th>Department Name</th>
-                                <th>Contact</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
                                 <th>Created Date</th>
                                 <th>Status</th>
                                 <th></th>
@@ -55,21 +55,21 @@
                                 <tr>
                                     <td>@item.N_ID</td>
                                     <td>@item.S_NAME</td>
-                                    <td>@item.S_CONTACT</td>
+                                    <td>@item.N_PRICE</td>
                                     <td>@item.D_CREATED.ToString("dd/MM/yyyy")</td>
                                     <td>@item.S_STATUS</td>
                                     <td>
-                                        <a href="@Url.Action("Edit","Department", new { n_id = @item.N_ID })" style="margin-left: 5px">Edit</a>
+                                        <a href="@Url.Action("Edit","Product", new { n_id = @item.N_ID })" style="margin-left: 5px">Edit</a>
 
                                         @if (@item.S_STATUS.Equals("Active"))
                                         {
-                                            <a href="@Url.Action("UpdateStatusDepartment","Department", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                            <a href="@Url.Action("UpdateStatusProduct","Product", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                                 InActive
                                             </a>
                                         }
                                         else
                                         {
-                                            <a href="@Url.Action("UpdateStatusDepartment","Department", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                                            <a href="@Url.Action("UpdateStatusProduct","Product", new { n_id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
                                                 Active
                                             </a>
                                         }
@@ -91,7 +91,7 @@
 
     <script>
         function myFunction() {
-            alert("Update Department success!");
+            alert("Update Product success!");
         }
     </script>
 </body>

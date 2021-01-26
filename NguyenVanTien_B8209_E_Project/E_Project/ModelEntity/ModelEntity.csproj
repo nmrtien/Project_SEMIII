@@ -57,8 +57,12 @@
     <Compile Include="DepartmentDBModel.cs" />
     <Compile Include="Frameworks\E_ProjectDbContext.cs" />
     <Compile Include="Frameworks\TB_ACCOUNT.cs" />
+    <Compile Include="Frameworks\TB_CUSTOMER.cs" />
     <Compile Include="Frameworks\TB_DEPARTMENT.cs" />
+    <Compile Include="Frameworks\TB_PLAN.cs" />
+    <Compile Include="Frameworks\TB_PRODUCT.cs" />
     <Compile Include="Frameworks\TB_STORE.cs" />
+    <Compile Include="ProductDBModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreDBModel.cs" />
   </ItemGroup>

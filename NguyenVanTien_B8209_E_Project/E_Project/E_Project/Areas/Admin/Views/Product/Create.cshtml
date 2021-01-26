@@ -2,13 +2,13 @@
 @{
     Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
 }
-@model E_Project.Areas.Admin.Model.StoreModel
+@model E_Project.Areas.Admin.Model.ProductModel
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <title>Create</title>
 </head>
 <body>
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -19,41 +19,40 @@
                 <div class="col-lg-12 text-center">
                     <div class="p-5 text-center">
                         <div class="form-group col-lg-12 text-center">
-                            <h1 class="h4 text-gray-900 mb-4">EDIT STORE</h1>
+                            <h1 class="h4 text-gray-900 mb-4">CREATE PRODUCT</h1>
                         </div>
 
                         @using (Html.BeginForm())
                         {
-
                             <div class="form-group col-lg-12">
                                 @Html.TextBoxFor(model => model.id, new { @class = "form-control form-control-user", @placeholder = "ID...", @readOnly = "true" })
 
                             </div>
+
                             <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.storeName, new { @class = "form-control form-control-user", @placeholder = "Store name..." })
+                                @Html.TextBoxFor(model => model.productName, new { @class = "form-control form-control-user", @placeholder = "PRODUCT NAME..." })
 
                             </div>
                             <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.address, new { @class = "form-control form-control-user", @placeholder = "ADDRESS..." })
+                                @Html.TextBoxFor(model => model.price, new { @class = "form-control form-control-user", @placeholder = "PRICE...", @type = "number" })
 
                             </div>
                             <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.contact, new { @class = "form-control form-control-user", @placeholder = "Contact..." })
+                                @Html.TextBoxFor(model => model.type, new { @class = "form-control form-control-user", @placeholder = "TYPE..." })
 
                             </div>
-
-                         
-
                             <div class="form-group col-lg-12">
-                                @Html.TextBoxFor(model => model.status, new { @class = "form-control form-control-user", @placeholder = "Status...", @readOnly = "true" })
+                                @Html.TextBoxFor(model => model.detail, new { @class = "form-control form-control-user", @placeholder = "PRODUCT DETAIL..." })
 
                             </div>
+                            <div class="form-group col-lg-12">
+                                @Html.TextBoxFor(model => model.description, new { @class = "form-control form-control-user", @placeholder = "DESCRIPTION..." })
 
-
+                            </div>
 
                             <div class="form-group col-lg-6 row">
                                 <div class="form-group col-lg-2 row">
-                                    <a href="@Url.Action("List","Store")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
+                                    <a href="@Url.Action("List","Product")" class="btn btn-danger btn-user btn-block" style="margin-left: 10px">Cancel</a>
                                 </div>
                                 <div class="form-group col-lg-2 row">
                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 10px" onclick="myFunction()">Save</button>
@@ -70,8 +69,9 @@
     </div>
     <script>
         function myFunction() {
-            alert("Update Store success!");
+            alert("Create Product success!");
         }
     </script>
 </body>
 </html>
+
