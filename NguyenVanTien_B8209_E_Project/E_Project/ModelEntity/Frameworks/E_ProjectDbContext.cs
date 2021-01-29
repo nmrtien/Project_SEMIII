@@ -16,7 +16,7 @@ namespace ModelEntity.Frameworks
         public virtual DbSet<TB_ACCOUNT> TB_ACCOUNT { get; set; }
         public virtual DbSet<TB_CUSTOMER> TB_CUSTOMER { get; set; }
         public virtual DbSet<TB_DEPARTMENT> TB_DEPARTMENT { get; set; }
-        public virtual DbSet<TB_ODER> TB_ODER { get; set; }
+        public virtual DbSet<TB_ORDER> TB_ORDER { get; set; }
         public virtual DbSet<TB_PLAN> TB_PLAN { get; set; }
         public virtual DbSet<TB_PLAN_DETAIL> TB_PLAN_DETAIL { get; set; }
         public virtual DbSet<TB_PRODUCT> TB_PRODUCT { get; set; }
@@ -102,31 +102,31 @@ namespace ModelEntity.Frameworks
                 .WithOptional(e => e.TB_DEPARTMENT)
                 .HasForeignKey(e => e.N_DEPARTMENT_ID);
 
-            modelBuilder.Entity<TB_ODER>()
+            /*modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.N_AMOUNT)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TB_ODER>()
+            modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.N_TOTAL)
+                .IsUnicode(false);*/
+
+            modelBuilder.Entity<TB_ORDER>()
+                .Property(e => e.S_CUSTOMER_NAME)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TB_ODER>()
-                .Property(e => e.S_NAME)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TB_ODER>()
+            modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.S_PHONE)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TB_ODER>()
+            modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.S_ADDRESS)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TB_ODER>()
+            modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.S_DESCRIPTION)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TB_ODER>()
+            modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.S_STATUS)
                 .IsUnicode(false);
 
@@ -189,7 +189,7 @@ namespace ModelEntity.Frameworks
                 .IsUnicode(false);
 
             modelBuilder.Entity<TB_PRODUCT>()
-                .HasMany(e => e.TB_ODER)
+                .HasMany(e => e.TB_ORDER)
                 .WithOptional(e => e.TB_PRODUCT)
                 .HasForeignKey(e => e.N_PRODUCT_ID);
 

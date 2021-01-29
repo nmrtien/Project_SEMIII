@@ -2040,6 +2040,8 @@
     <Content Include="Areas\Admin\Views\Plan\List.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\DetailOrder.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2070,7 +2072,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Customer\" />
-    <Folder Include="Areas\Admin\Views\Order\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

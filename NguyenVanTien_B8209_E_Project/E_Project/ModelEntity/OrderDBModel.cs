@@ -17,22 +17,34 @@ namespace ModelEntity
             context = new E_ProjectDbContext();
         }
 
-        public List<TB_ORDER> getListOrder()
+        public List<TB_ALL_ORDER> getListOrder()
         {
 
-            var result = context.Database.SqlQuery<TB_ORDER>("Usp_GetAllOrder").ToList();
+            var result = context.Database.SqlQuery<TB_ALL_ORDER>("Usp_GetAllOrder").ToList();
 
             return result;
         }
 
-        public object updateStatusOrder(int n_id, string s_status)
+        public object updateStatusOrder(string name, DateTime orderDate, string s_status)
         {
             object[] sqlParams =
             {
-                new SqlParameter("@N_ID", n_id),
+                new SqlParameter("@S_CUSTOMER_NAME", name),
+                new SqlParameter("@D_CREATED", orderDate),
                 new SqlParameter("@S_STATUS", s_status)
             };
-            var result = context.Database.SqlQuery<object>("Usp_UpdateStatusOrder @N_ID,@S_STATUS", sqlParams).SingleOrDefault();
+            var result = context.Database.SqlQuery<object>("Usp_UpdateStatusOrder @S_CUSTOMER_NAME,@D_CREATED,@S_STATUS", sqlParams).SingleOrDefault();
+            return result;
+        }
+
+        public object getDetailOrder(string name, DateTime orderDate)
+        {
+            object[] sqlParams =
+            {
+                new SqlParameter("@S_CUSTOMER_NAME", name),
+                new SqlParameter("@D_CREATED", orderDate)
+            };
+            var result = context.Database.SqlQuery<TB_ORDER>("Usp_GetDetailOrder @S_CUSTOMER_NAME,@D_CREATED", sqlParams).ToList();
             return result;
         }
 
@@ -47,7 +59,7 @@ namespace ModelEntity
             return result;
         }
 
-        public object updateOrderById(TB_ORDER model)
+        /*public object updateOrderById(TB_ORDER model)
         {
             object[] sqlParams =
             {
@@ -75,6 +87,6 @@ namespace ModelEntity
             var result = context.Database.SqlQuery<object>("Usp_InsertOrder @S_NAME,@N_PRICE,@S_TYPE,@S_DETAIL,@S_DESCRIPTION", sqlParams).SingleOrDefault();
 
             return result;
-        }
+        }*/
     }
 }

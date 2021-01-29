@@ -61,6 +61,7 @@
     <Compile Include="Frameworks\TB_ACCOUNT.cs" />
     <Compile Include="Frameworks\TB_CUSTOMER.cs" />
     <Compile Include="Frameworks\TB_DEPARTMENT.cs" />
+    <Compile Include="Frameworks\TB_ALL_ORDER.cs" />
     <Compile Include="Frameworks\TB_ORDER.cs" />
     <Compile Include="Frameworks\TB_PLAN.cs" />
     <Compile Include="Frameworks\TB_PLAN_DETAIL.cs" />
