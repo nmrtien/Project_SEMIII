@@ -135,6 +135,7 @@
     <Compile Include="Areas\Admin\Model\LoginModel.cs" />
     <Compile Include="Areas\Admin\Model\DepartmentModel.cs" />
     <Compile Include="Areas\Admin\Model\OrderModel.cs" />
+    <Compile Include="Areas\Admin\Model\PlanDetailModel.cs" />
     <Compile Include="Areas\Admin\Model\PlanModel.cs" />
     <Compile Include="Areas\Admin\Model\ProductModel.cs" />
     <Compile Include="Areas\Admin\Model\StoreModel.cs" />
@@ -2042,6 +2043,10 @@
     <Content Include="Areas\Admin\Views\Plan\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Order\List.cshtml" />
     <Content Include="Areas\Admin\Views\Order\DetailOrder.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2071,7 +2076,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Customer\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

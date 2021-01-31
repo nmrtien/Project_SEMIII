@@ -8,6 +8,12 @@ namespace ModelEntity.Frameworks
 
     public partial class TB_CUSTOMER
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_CUSTOMER()
+        {
+            TB_PLAN_DETAIL = new HashSet<TB_PLAN_DETAIL>();
+        }
+
         [Key]
         public int N_ID { get; set; }
 
@@ -40,10 +46,15 @@ namespace ModelEntity.Frameworks
 
         public int? N_ACCOUNT_ID { get; set; }
 
-        public int? N_PLAN_DETAIL_ID { get; set; }
-
         public virtual TB_ACCOUNT TB_ACCOUNT { get; set; }
 
-        public virtual TB_PLAN_DETAIL TB_PLAN_DETAIL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_PLAN_DETAIL> TB_PLAN_DETAIL { get; set; }
+
+        public string PLAN_NAME { get; set; }
+
+        public string S_FULLNAME { get; set; }
+
+        public DateTime? D_EXPRIRE { get; set; }
     }
 }

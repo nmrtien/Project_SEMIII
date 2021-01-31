@@ -10,18 +10,6 @@ G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\De
 G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CopyComplete
 G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.dll
 G:\My Files\E Project\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.pdb
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll.config
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.pdb
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.dll
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.SqlServer.dll
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.xml
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.SqlServer.xml
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csprojAssemblyReference.cache
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CoreCompileInputs.cache
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CopyComplete
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.dll
-A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.pdb
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll.config
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.pdb
@@ -34,3 +22,15 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\Mod
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CopyComplete
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.pdb
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.xml
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll.config
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\ModelEntity.pdb
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.SqlServer.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\bin\Debug\EntityFramework.SqlServer.xml
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csprojAssemblyReference.cache
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CoreCompileInputs.cache
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CopyComplete
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.dll
+A:\E_Project_Main\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.pdb

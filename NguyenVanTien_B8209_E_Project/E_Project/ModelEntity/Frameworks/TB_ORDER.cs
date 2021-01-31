@@ -45,5 +45,6 @@ namespace ModelEntity.Frameworks
         public virtual TB_PRODUCT TB_PRODUCT { get; set; }
 
         public string PRODUCT_NAME { get; set; }
+        public string PLAN_NAME { get; set; }
     }
 }

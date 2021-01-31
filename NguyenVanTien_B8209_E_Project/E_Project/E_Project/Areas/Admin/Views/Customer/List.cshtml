@@ -2,7 +2,7 @@
 @{
     Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
 }
-@model List<ModelEntity.Frameworks.TB_ORDER>
+@model List<ModelEntity.Frameworks.TB_CUSTOMER>
 <!DOCTYPE html>
 
 <html>
@@ -14,7 +14,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Order Detail</h1>
+        <h1 class="h3 mb-2 text-gray-800">List Customer</h1>
         @*<p class="mb-4">
                 DataTables is a third party plugin that is used to generate the demo table below.
                 For more information about DataTables, please visit the <a target="_blank"
@@ -23,38 +23,34 @@
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("List","Order")">Back</a></h6>
-            </div>
+           <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("Create","Customer")">Add new</a></h6>
+                </div>
             <div class="card-body">
                 <div class="table-responsive" style="overflow-x: hidden !important">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr style="background-color: #e0f9f0;">
-                                <th>ID</th>
                                 <th>Customer</th>
+                                <th>Code</th>
                                 <th>Phone</th>
                                 <th>Address</th>
-                                <th>Order Date</th>
-                                <th>Product</th>
-                                <th>Total</th>
-                                <th>Amount</th>
+                                <th>Created Date</th>
                                 <th>Plan</th>
+                                <th>Created By</th>
                                 <th>Status</th>
                                 <th style="width: 120px !important; min-width: 120px !important"></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr style="background-color: #e0f9f0;">
-                                <th>ID</th>
                                 <th>Customer</th>
+                                <th>Code</th>
                                 <th>Phone</th>
                                 <th>Address</th>
-                                <th>Order Date</th>
-                                <th>Product</th>
-                                <th>Total</th>
-                                <th>Amount</th>
+                                <th>Created Date</th>
                                 <th>Plan</th>
+                                <th>Created By</th>
                                 <th>Status</th>
                                 <th style="width: 120px !important; min-width: 120px !important"></th>
                             </tr>
@@ -63,28 +59,26 @@
                             @foreach (var item in Model)
                             {
                             <tr>
-                                <th>@item.N_ID</th>
-                                <td>@item.S_CUSTOMER_NAME</td>
+                                <td>@item.S_NAME</td>
+                                <td>@item.S_CODE</td>
                                 <td>@item.S_PHONE</td>
                                 <td>@item.S_ADDRESS</td>
                                 <td>@item.D_CREATED.ToString("dd/MM/yyyy")</td>
-                                <td>@item.PRODUCT_NAME</td>
-                                <td>@item.N_TOTAL</td>
-                                <td>@item.N_AMOUNT</td>
                                 <td>@item.PLAN_NAME</td>
+                                <td>@item.S_FULLNAME</td>
                                 <td>@item.S_STATUS</td>
                                 <td>
-                                    <a href="@Url.Action("Edit","Order", new { n_id = @item.N_ID })" style="margin-left: 5px">EDIT</a>
+                                    <a href="@Url.Action("DetailCustomer","Customer", new { n_id = @item.N_ID })" style="margin-left: 5px;font-size:12px">Detail</a>
                                     
             @if (@item.S_STATUS.Equals("Active"))
             {
-                <a href="@Url.Action("UpdateStatusOrder","Order", new { id = @item.N_ID, name = @item.S_CUSTOMER_NAME, date = @item.D_CREATED, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                <a href="@Url.Action("UpdateStatusCustomer","Customer", new { id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red;font-size:12px" onclick="myFunction()">
                     InActive
                 </a>
             }
             else
             {
-                <a href="@Url.Action("UpdateStatusOrder","Order", new { id = @item.N_ID, name = @item.S_CUSTOMER_NAME, date = @item.D_CREATED, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red" onclick="myFunction()">
+                <a href="@Url.Action("UpdateStatusCustomer","Customer", new { id = @item.N_ID, s_status = @item.S_STATUS })" style="margin-left: 10px;color: red;font-size:12px" onclick="myFunction()">
                     Active
                 </a>
             }
@@ -104,7 +98,7 @@
     <!-- Edit Modal-->
     <script>
             function myFunction() {
-                alert("Update Order success!");
+                alert("Update Customer success!");
             }
         </script>
 </body>

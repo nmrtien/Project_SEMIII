@@ -25,15 +25,14 @@ namespace ModelEntity
             return result;
         }
 
-        public object updateStatusOrder(string name, DateTime orderDate, string s_status)
+        public object updateStatusOrder(int id, string s_status)
         {
             object[] sqlParams =
             {
-                new SqlParameter("@S_CUSTOMER_NAME", name),
-                new SqlParameter("@D_CREATED", orderDate),
+                new SqlParameter("@N_ID", id),
                 new SqlParameter("@S_STATUS", s_status)
             };
-            var result = context.Database.SqlQuery<object>("Usp_UpdateStatusOrder @S_CUSTOMER_NAME,@D_CREATED,@S_STATUS", sqlParams).SingleOrDefault();
+            var result = context.Database.SqlQuery<object>("Usp_UpdateStatusOrder @N_ID,@S_STATUS", sqlParams).SingleOrDefault();
             return result;
         }
 
@@ -59,22 +58,22 @@ namespace ModelEntity
             return result;
         }
 
-        /*public object updateOrderById(TB_ORDER model)
+        public object updateOrderById(TB_ORDER model)
         {
             object[] sqlParams =
             {
                 new SqlParameter("@N_ID", model.N_ID),
-                new SqlParameter("@S_NAME", model.S_NAME),
-                new SqlParameter("@N_PRICE", model.N_PRICE),
-                new SqlParameter("@S_TYPE", model.S_TYPE),
+                new SqlParameter("@S_CUSTOMER_NAME", model.S_CUSTOMER_NAME),
+                new SqlParameter("@S_PHONE", model.S_PHONE),
+                new SqlParameter("@S_ADDRESS", model.S_ADDRESS),
                 new SqlParameter("@S_DESCRIPTION", model.S_DESCRIPTION)
             };
-            var result = context.Database.SqlQuery<object>("Usp_updateOrderById @N_ID,@S_NAME,@N_PRICE,@S_TYPE,@S_DESCRIPTION", sqlParams).SingleOrDefault();
+            var result = context.Database.SqlQuery<object>("Usp_updateOrderById @N_ID,@S_CUSTOMER_NAME,@S_PHONE,@S_ADDRESS,@S_DESCRIPTION", sqlParams).SingleOrDefault();
 
             return result;
         }
 
-        public object createOrder(TB_ORDER model)
+        /*public object createOrder(TB_ORDER model)
         {
             object[] sqlParams =
             {

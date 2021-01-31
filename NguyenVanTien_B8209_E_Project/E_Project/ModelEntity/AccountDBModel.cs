@@ -49,6 +49,7 @@ namespace ModelEntity
             return accountResult;
         }
 
+
         public List<TB_ACCOUNT> getListManager()
         {
 

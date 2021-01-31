@@ -1,4 +1,4 @@
-namespace ModelEntity.Frameworks
+﻿namespace ModelEntity.Frameworks
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +8,7 @@ namespace ModelEntity.Frameworks
 
     public partial class TB_ALL_ORDER
     {
+        public int N_ID { get; set; }
 
         [Required]
         public double AMOUNT { get; set; }

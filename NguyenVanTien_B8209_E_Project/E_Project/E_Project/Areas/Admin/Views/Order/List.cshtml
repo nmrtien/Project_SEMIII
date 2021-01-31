@@ -23,9 +23,9 @@
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
+            @*<div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary"><a href="@Url.Action("Create","Order")">Add new</a></h6>
-            </div>
+            </div>*@
             <div class="card-body">
                 <div class="table-responsive" style="overflow-x: hidden !important">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -39,7 +39,6 @@
                                 <th>Total</th>
                                 <th>Amount</th>
                                 <th>Plan</th>
-                                <th>Status</th>
                                 <th style="width: 120px !important; min-width: 120px !important"></th>
                             </tr>
                         </thead>
@@ -53,7 +52,6 @@
                                 <th>Total</th>
                                 <th>Amount</th>
                                 <th>Plan</th>
-                                <th>Status</th>
                                 <th style="width: 120px !important; min-width: 120px !important"></th>
                             </tr>
                         </tfoot>
@@ -69,9 +67,8 @@
                                 <td>@item.TOTAL</td>
                                 <td>@item.AMOUNT</td>
                                 <td>@item.PLAN_NAME</td>
-                                <td>@item.S_STATUS</td>
                                 <td>
-                                    <a href="@Url.Action("GetDetailOrder","Order", new { name = @item.S_CUSTOMER_NAME, date = @item.D_CREATED })" style="margin-left: 5px">Detail</a>
+                                    <a href="@Url.Action("DetailOrder","Order", new { name = @item.S_CUSTOMER_NAME, date = @item.D_CREATED })" style="margin-left: 5px">Detail</a>
                                     @*
             @if (@item.S_STATUS.Equals("Active"))
             {
@@ -101,10 +98,10 @@
     <!-- Edit Modal-->
 
 
-    <script>
+    @*<script>
         function myFunction() {
             alert("Update Product success!");
         }
-    </script>
+    </script>*@
 </body>
 </html>

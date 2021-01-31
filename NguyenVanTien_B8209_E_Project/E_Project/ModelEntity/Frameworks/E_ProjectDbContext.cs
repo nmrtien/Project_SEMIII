@@ -1,10 +1,10 @@
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Linq;
-
 namespace ModelEntity.Frameworks
 {
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
     public partial class E_ProjectDbContext : DbContext
     {
         public E_ProjectDbContext()
@@ -85,6 +85,11 @@ namespace ModelEntity.Frameworks
                 .Property(e => e.S_STATUS)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<TB_CUSTOMER>()
+                .HasMany(e => e.TB_PLAN_DETAIL)
+                .WithOptional(e => e.TB_CUSTOMER)
+                .HasForeignKey(e => e.N_CUSTOMER_ID);
+
             modelBuilder.Entity<TB_DEPARTMENT>()
                 .Property(e => e.S_NAME)
                 .IsUnicode(false);
@@ -101,14 +106,6 @@ namespace ModelEntity.Frameworks
                 .HasMany(e => e.TB_ACCOUNT)
                 .WithOptional(e => e.TB_DEPARTMENT)
                 .HasForeignKey(e => e.N_DEPARTMENT_ID);
-
-            /*modelBuilder.Entity<TB_ORDER>()
-                .Property(e => e.N_AMOUNT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TB_ORDER>()
-                .Property(e => e.N_TOTAL)
-                .IsUnicode(false);*/
 
             modelBuilder.Entity<TB_ORDER>()
                 .Property(e => e.S_CUSTOMER_NAME)
@@ -150,6 +147,11 @@ namespace ModelEntity.Frameworks
                 .Property(e => e.S_STATUS)
                 .IsUnicode(false);
 
+            /*modelBuilder.Entity<TB_PLAN>()
+                .HasMany(e => e.TB_ORDER)
+                .WithOptional(e => e.TB_PLAN)
+                .HasForeignKey(e => e.N_PLAN_ID);*/
+
             modelBuilder.Entity<TB_PLAN>()
                 .HasMany(e => e.TB_PLAN_DETAIL)
                 .WithOptional(e => e.TB_PLAN)
@@ -162,11 +164,6 @@ namespace ModelEntity.Frameworks
             modelBuilder.Entity<TB_PLAN_DETAIL>()
                 .Property(e => e.S_DESCRIPTION)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<TB_PLAN_DETAIL>()
-                .HasMany(e => e.TB_CUSTOMER)
-                .WithOptional(e => e.TB_PLAN_DETAIL)
-                .HasForeignKey(e => e.N_PLAN_DETAIL_ID);
 
             modelBuilder.Entity<TB_PRODUCT>()
                 .Property(e => e.S_NAME)
@@ -190,11 +187,6 @@ namespace ModelEntity.Frameworks
 
             modelBuilder.Entity<TB_PRODUCT>()
                 .HasMany(e => e.TB_ORDER)
-                .WithOptional(e => e.TB_PRODUCT)
-                .HasForeignKey(e => e.N_PRODUCT_ID);
-
-            modelBuilder.Entity<TB_PRODUCT>()
-                .HasMany(e => e.TB_PLAN_DETAIL)
                 .WithOptional(e => e.TB_PRODUCT)
                 .HasForeignKey(e => e.N_PRODUCT_ID);
 
