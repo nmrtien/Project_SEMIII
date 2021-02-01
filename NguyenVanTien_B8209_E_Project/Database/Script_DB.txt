@@ -116,7 +116,14 @@ CREATE TABLE [dbo].[TB_PRODUCT](
 ) ON [PRIMARY];
 
 GO
-
+INSERT INTO TB_PRODUCT VALUES('Sony Express',270,'test','Product_01.jpg','test','Active','1999-09-29');
+INSERT INTO TB_PRODUCT VALUES('Lenovo Express',190,'test','Product_02.png','test','Active','1999-09-29');
+INSERT INTO TB_PRODUCT VALUES('Dell Express',210,'test','Product_03.png','test','Active','1999-09-29');
+INSERT INTO TB_PRODUCT VALUES('Toshiba Express',220,'test','Product_04.jpg','test','Active','1999-09-29');
+INSERT INTO TB_PRODUCT VALUES('Sharp Express',240,'test','Product_05.jpg','test','Active','1999-09-29');
+INSERT INTO TB_PRODUCT VALUES('Samsung Express',230,'test','Product_06.jpg','test','Active','1999-09-29');
+INSERT INTO TB_PRODUCT VALUES('HP Express',215,'test','Product_07.jpg','test','Active','1999-09-29');
+GO
 DROP TABLE [TB_PRODUCT];
 
 GO
@@ -131,6 +138,14 @@ CREATE TABLE [dbo].[TB_PLAN](
 	[D_CREATED] [DATE] NOT NULL
 	
 ) ON [PRIMARY];
+
+GO
+
+INSERT INTO [TB_PLAN] VALUES('Dial up','Dial up','Dial up','Dial up','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Telephone 5G','Telephone 5G','Telephone 5G','Telephone 5G','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Broad Up','Broad Up','Broad Up','Broad Up','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Internet','Internet','Internet','Internet','Active','1999-09-29');
+
 
 GO
 
@@ -153,6 +168,13 @@ CREATE TABLE [dbo].[TB_PLAN_DETAIL](
 
 GO
 
+INSERT INTO [TB_PLAN_DETAIL] VALUES(300,'Detail 01','Detail 01','2021-04-30',NULL,'2021-01-30',1,1);
+INSERT INTO [TB_PLAN_DETAIL] VALUES(200,'Detail 02','Detail 02','2021-05-30',NULL,'2021-01-30',1,2);
+INSERT INTO [TB_PLAN_DETAIL] VALUES(400,'Detail 03','Detail 03','2021-03-30',NULL,'2021-01-30',2,1);
+INSERT INTO [TB_PLAN_DETAIL] VALUES(600,'Detail 04','Detail 04','2021-06-30',NULL,'2021-01-30',2,2);
+
+GO
+
 DROP TABLE [TB_PLAN_DETAIL];
 
 GO
@@ -169,6 +191,12 @@ CREATE TABLE [dbo].[TB_CUSTOMER](
 	[N_ACCOUNT_ID] int FOREIGN KEY REFERENCES [TB_ACCOUNT](N_ID)
 	
 ) ON [PRIMARY];
+
+GO
+
+INSERT INTO [TB_CUSTOMER] VALUES('D0000000021','Nguyen Tran Ngoc','09587675675','Ha Noi','Test Customer 01','Active','2021-04-30',28);
+INSERT INTO [TB_CUSTOMER] VALUES('T0000000021','Nguyen Tran Ngoc1','09587675675','Ha Noi','Test Customer 02','Active','2021-04-30',14);
+INSERT INTO [TB_CUSTOMER] VALUES('B0000000021','Nguyen Tran Ngoc2','09587675675','Ha Noi','Test Customer 03','Active','2021-04-30',13);
 
 GO
 
@@ -190,6 +218,12 @@ CREATE TABLE [dbo].[TB_ORDER](
 	[N_PLAN_ID] int FOREIGN KEY REFERENCES [TB_PLAN](N_ID)
 	
 ) ON [PRIMARY];
+
+GO
+
+INSERT INTO [TB_ORDER] VALUES(500,2,'Nguyen The Danh','092847747','Ha Noi','Test Order 01','Active','2021-04-30',1,1);
+INSERT INTO [TB_ORDER] VALUES(1000,4,'Nguyen The Danh1','092847747','Ha Noi','Test Order 02','Active','2021-04-30',1,2);
+INSERT INTO [TB_ORDER] VALUES(1500,6,'Nguyen The Danh2','092847747','Ha Noi','Test Order 03','Active','2021-04-30',1,3);
 
 GO
 
@@ -453,6 +487,13 @@ SELECT * FROM TB_PRODUCT
 
 GO
 
+CREATE PROCEDURE Usp_GetAllProductTop6 
+AS
+SELECT TOP 6 * FROM TB_PRODUCT
+ ORDER BY N_PRICE ASC;
+
+GO
+
 CREATE PROCEDURE Usp_GetProductById 
 	@N_ID int
 AS
@@ -507,6 +548,12 @@ SELECT * FROM TB_PLAN
 
 GO
 
+CREATE PROCEDURE Usp_GetAllPlanTop3 
+AS
+SELECT TOP 3 * FROM TB_PLAN
+
+GO
+
 CREATE PROCEDURE Usp_GetPlanById 
 	@N_ID int
 AS
@@ -514,6 +561,7 @@ SELECT s.* FROM TB_PLAN AS s
 WHERE s.N_ID = @N_ID;
 
 GO
+
 
 CREATE PROCEDURE Usp_updatePlanById
 	@N_ID int,

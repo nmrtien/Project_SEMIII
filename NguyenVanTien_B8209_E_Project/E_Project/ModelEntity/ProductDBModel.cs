@@ -25,6 +25,14 @@ namespace ModelEntity
             return result;
         }
 
+        public List<TB_PRODUCT> getListProductTop6()
+        {
+
+            var result = context.Database.SqlQuery<TB_PRODUCT>("Usp_GetAllProductTop6").ToList();
+
+            return result;
+        }
+
         public object updateStatusProduct(int n_id, string s_status)
         {
             object[] sqlParams =

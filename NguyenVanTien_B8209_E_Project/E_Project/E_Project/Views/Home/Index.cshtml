@@ -1,8 +1,9 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_layout.cshtml";
 }
 
+@model E_Project.Models.IndexModel
 <!DOCTYPE html>
 
 <html>
@@ -11,8 +12,121 @@
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <h1>TEST .NET</h1>
+    <div class="container">
+        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(../Assets/Home/img/banner_01.jpg);width:100%;margin-left:0%">
+            <div class="container py-5">
+                <div class="row px-4 px-lg-5">
+                    <div class="col-lg-6">
+                        <p class="text-muted small text-uppercase mb-2">New Inspiration 2021</p>
+                        <h1 class="h2 text-uppercase mb-3">You and the world</h1><a class="btn btn-dark" href="">Connections</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CATEGORIES SECTION-->
+        <section class="pt-5">
+            <header class="text-center">
+                <p class="small text-muted small text-uppercase mb-1">Carefully created connections</p>
+                <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
+            </header>
+            <div class="row">
+                @foreach (var item in Model.Plans)
+                {
+                    <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="@Url.Action("Detail","Plan")"><img class="img-fluid" src="~/Assets/Home/img/index_plan.jpg" alt=""><strong class="category-item-title" style="margin-top:30%">@item.S_NAME</strong></a></div>
+                }
+                </div>
+        </section>
+        <!-- TRENDING PRODUCTS-->
+        <section class="py-5">
+            <header>
+                <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
+                <h2 class="h5 text-uppercase mb-4">Top products</h2>
+            </header>
+            <div class="row">
+                <!-- PRODUCT-->
+                @foreach (var item in Model.Products)
+                {
+
+                    <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="product text-center">
+                            <div class="position-relative mb-3">
+                                <div class="badge text-white badge-"></div><a class="d-block" href="@Url.Action("Detail","Plan")"><img class="img-fluid w-100" src="~/Assets/Admin/img/@item.S_DETAIL" alt="..." style="height:350px !important"></a>
+                                <div class="product-overlay">
+                                    <ul class="mb-0 list-inline">
+                                        @*<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>*@
+                                        <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="@Url.Action("AddToCard","Home")">Add to cart</a></li>
+                                        @*<li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                            <h6> <a class="reset-anchor" href="detail.html">@item.S_NAME</a></h6>
+                            <p class="small text-muted">@item.N_PRICE $</p>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </section>
+        <!-- SERVICES-->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <div class="d-inline-block">
+                            <div class="media align-items-end">
+                                <svg class="svg-icon svg-icon-big svg-icon-light">
+                                    <use xlink:href="#delivery-time-1"> </use>
+                                </svg>
+                                <div class="media-body text-left ml-3">
+                                    <h6 class="text-uppercase mb-1">Free shipping</h6>
+                                    <p class="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <div class="d-inline-block">
+                            <div class="media align-items-end">
+                                <svg class="svg-icon svg-icon-big svg-icon-light">
+                                    <use xlink:href="#helpline-24h-1"> </use>
+                                </svg>
+                                <div class="media-body text-left ml-3">
+                                    <h6 class="text-uppercase mb-1">24 x 7 service</h6>
+                                    <p class="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-inline-block">
+                            <div class="media align-items-end">
+                                <svg class="svg-icon svg-icon-big svg-icon-light">
+                                    <use xlink:href="#label-tag-1"> </use>
+                                </svg>
+                                <div class="media-body text-left ml-3">
+                                    <h6 class="text-uppercase mb-1">Festival offer</h6>
+                                    <p class="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- NEWSLETTER-->
+        <section class="py-5">
+            <div class="container p-0">
+                <div class="row">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <h5 class="text-uppercase">Connect and share!</h5>
+                        <p class="text-small text-muted mb-0">The best service.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div>
+
 </body>
 </html>

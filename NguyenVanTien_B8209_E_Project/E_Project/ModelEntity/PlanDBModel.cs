@@ -25,6 +25,14 @@ namespace ModelEntity
             return result;
         }
 
+        public List<TB_PLAN> getListPlanTop3()
+        {
+
+            var result = context.Database.SqlQuery<TB_PLAN>("Usp_GetAllPlanTop3").ToList();
+
+            return result;
+        }
+
         public object updateStatusPlan(int n_id, string s_status)
         {
             object[] sqlParams =

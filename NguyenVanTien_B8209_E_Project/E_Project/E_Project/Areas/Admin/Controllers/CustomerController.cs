@@ -84,7 +84,7 @@ namespace E_Project.Areas.Admin.Controllers
             List<TB_PLAN> planList = modelDB.getListPlan();
             customerModel.saleList = new List<DropDownModel>();
             customerModel.planList = new List<DropDownModel>();
-            saleList.ForEach(store => customerModel.saleList.Add(new DropDownModel(store.N_ID, store.S_FULLNAME)));
+            saleList.ForEach(sale => customerModel.saleList.Add(new DropDownModel(sale.N_ID, sale.S_FULLNAME)));
             planList.ForEach(plan => customerModel.planList.Add(new DropDownModel(plan.N_ID, plan.S_NAME)));
             return View(customerModel);
         }
