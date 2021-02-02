@@ -130,6 +130,7 @@
     <Compile Include="Areas\Admin\Controllers\StoreController.cs" />
     <Compile Include="Areas\Admin\Model\AccountModel.cs" />
     <Compile Include="Areas\Admin\Model\AccountTypeModel.cs" />
+    <Compile Include="Areas\Admin\Model\CustomerDetailModel.cs" />
     <Compile Include="Areas\Admin\Model\CustomerModel.cs" />
     <Compile Include="Areas\Admin\Model\DropDownModel.cs" />
     <Compile Include="Areas\Admin\Model\LoginModel.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Areas\Admin\Utils\InfoSession.cs" />
     <Compile Include="Areas\Admin\Utils\SessionHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2259,6 +2261,9 @@
     <Content Include="Assets\Home\vendor\node-sass\bin\node-sass" />
     <Content Include="Assets\Home\vendor\node-sass\vendor\linux-x64-64\binding.node" />
     <Content Include="Assets\Home\vendor\nouislider\CHANGELOG.MD" />
+    <Content Include="Areas\Admin\Views\Customer\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\SelectPlan.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\PlanDetail.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2284,6 +2289,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

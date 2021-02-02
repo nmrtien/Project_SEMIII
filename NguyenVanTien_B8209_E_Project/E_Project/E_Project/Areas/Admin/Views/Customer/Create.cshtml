@@ -26,6 +26,18 @@
                         {
 
                             <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">ACCOUNT</label>
+                                @Html.TextBoxFor(model => model.account, new { @class = "form-control form-control-user", @placeholder = "account..." })
+
+                            </div>
+
+                            <div class="form-group col-lg-12">
+                                <label for="exampleInputEmail1" style="float:left !important">PASSWORD</label>
+                                @Html.TextBoxFor(model => model.password, new { @class = "form-control form-control-user", @placeholder = "password..." })
+
+                            </div>
+
+                            <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" style="float:left !important">CUSTOMER NAME</label>
                                 @Html.TextBoxFor(model => model.customerName, new { @class = "form-control form-control-user", @placeholder = "customer name..." })
 
@@ -49,7 +61,7 @@
                             </div>
 
 
-                            <div class="form-group col-lg-12">
+                            @*<div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" style="float:left !important">PLAN</label>
                                 @Html.DropDownListFor(n => n.planId, new SelectList(Model.planList, "id", "modelName"), new { @class = "form-control form-control-user" })
 
@@ -63,7 +75,7 @@
 
                             <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" style="float:left !important">AMOUNT</label>
-                                @Html.TextBoxFor(model => model.planDetail.amount, new { @class = "form-control form-control-user", @placeholder = "Amout...",@type="number" })
+                                @Html.TextBoxFor(model => model.planDetail.amount, new { @class = "form-control form-control-user", @placeholder = "Amout...", @type = "number" })
 
                             </div>
 
@@ -79,11 +91,11 @@
 
                             </div>
 
-                           <div class="form-group col-lg-12">
+                            <div class="form-group col-lg-12">
                                 <label for="exampleInputEmail1" style="float:left !important">CREATED BY</label>
                                 @Html.DropDownListFor(n => n.saleId, new SelectList(Model.saleList, "id", "modelName"), new { @class = "form-control form-control-user" })
 
-                            </div>
+                            </div>*@
 
                             <div class="form-group col-lg-6 row">
                                 <div class="form-group col-lg-2 row">

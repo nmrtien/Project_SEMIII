@@ -23,6 +23,14 @@ namespace ModelEntity.Frameworks
 
         [Required]
         [StringLength(50)]
+        public string S_ACCOUNT { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string S_PASSWORD { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string S_NAME { get; set; }
 
         [Required]
@@ -44,16 +52,11 @@ namespace ModelEntity.Frameworks
         [Column(TypeName = "date")]
         public DateTime D_CREATED { get; set; }
 
-        public int? N_ACCOUNT_ID { get; set; }
-
-        public virtual TB_ACCOUNT TB_ACCOUNT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PLAN_DETAIL> TB_PLAN_DETAIL { get; set; }
 
         public string PLAN_NAME { get; set; }
-
-        public string S_FULLNAME { get; set; }
 
         public DateTime? D_EXPRIRE { get; set; }
     }

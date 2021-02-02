@@ -14,6 +14,8 @@ namespace E_Project.Areas.Admin.Model
         
         public string customerName { get; set; }
         public string code { get; set; }
+        public string account { get; set; }
+        public string password { get; set; }
         public string accountName { get; set; }
         public string planName { get; set; }
         public string phone { get; set; }

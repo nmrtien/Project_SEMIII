@@ -63,7 +63,7 @@ namespace E_Project.Areas.Admin.Controllers
                 customer.S_PHONE = model.phone;
                 customer.S_ADDRESS = model.address;
                 customer.S_DESCRIPTION = model.description;
-                modelDB.updateOrderById(customer);
+                modelDB.updateCustomerById(customer);
 
                 return RedirectToAction("List");
 
@@ -78,16 +78,12 @@ namespace E_Project.Areas.Admin.Controllers
         // GET: Admin/Store/Create
         public ActionResult Create()
         {
-            var modelDB = new CustomerDBModel();
+
             var customerModel = new CustomerModel();
-            List<TB_ACCOUNT> saleList = modelDB.getListSale();
-            List<TB_PLAN> planList = modelDB.getListPlan();
-            customerModel.saleList = new List<DropDownModel>();
-            customerModel.planList = new List<DropDownModel>();
-            saleList.ForEach(sale => customerModel.saleList.Add(new DropDownModel(sale.N_ID, sale.S_FULLNAME)));
-            planList.ForEach(plan => customerModel.planList.Add(new DropDownModel(plan.N_ID, plan.S_NAME)));
+ 
             return View(customerModel);
         }
+
 
         // POST: Admin/Store/Create
         [HttpPost]
@@ -95,37 +91,16 @@ namespace E_Project.Areas.Admin.Controllers
         {
             try
             {
-                var codeTempl = "";
-                foreach (DropDownModel element in model.planList)
-                {
-                    if(element.id == model.planId)
-                    {
-                        codeTempl = element.modelName[0].ToString();
-                    }
-                }
-                Random rnd = new Random();
-                int ramdom01 = rnd.Next(10000, 99999);
-                int ramdom02 = rnd.Next(10000, 99999);
-                
-
+          
                 var modelDB = new CustomerDBModel();
                 TB_CUSTOMER customer = new TB_CUSTOMER();
-                TB_PLAN_DETAIL planDetail = new TB_PLAN_DETAIL();
-                planDetail.N_AMOUNT = model.planDetail.amount;
-                planDetail.S_DETAIL = model.planDetail.detail;
-                planDetail.S_DESCRIPTION = model.planDetail.description;
-                planDetail.D_EXPRIRE = model.planDetail.exprireDate;
-                planDetail.N_CUSTOMER_ID = model.id;
-                planDetail.N_PLAN_ID = model.planId;
-                modelDB.createPlanDetail(planDetail);
-
-                customer.S_CODE = codeTempl + ramdom01 + ramdom02;
+                customer.S_ACCOUNT = model.account;
+                customer.S_PASSWORD = model.password;
                 customer.S_NAME = model.customerName;
                 customer.S_PHONE = model.phone;
                 customer.S_ADDRESS = model.address;
                 customer.S_DESCRIPTION = model.description;
-                customer.N_ACCOUNT_ID = model.saleId;
-                modelDB.createCustomer(customer);
+                modelDB.registerCustomer(customer);
 
                 return RedirectToAction("List");
             }
@@ -133,6 +108,64 @@ namespace E_Project.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+
+
+        // GET: 
+        public ActionResult Detail(int id)
+        {
+            var modelDB = new CustomerDBModel();
+            var customer = modelDB.getCustomerById(id);
+            return View(customer);
+        }
+
+        // GET: 
+        public ActionResult SelectPlan(int id)
+        {
+            CustomerDetailModel customerDetailModel = new CustomerDetailModel();
+            var modelDB = new PlanDBModel();
+            var list = modelDB.getListPlan();
+
+            customerDetailModel.Plans = list;
+            customerDetailModel.customerId = id;
+            return View(customerDetailModel);
+        }
+
+        // GET: 
+        [HttpGet]
+        public ActionResult PlanDetail(int customerId, int planId)
+        {
+            var planDetail = new PlanDetailModel();
+            planDetail.accountId = customerId;
+            planDetail.planId = planId;
+            return View(planDetail);
+        }
+
+
+        [HttpPost]
+        public ActionResult PlanDetail(PlanDetailModel model)
+        {
+            var id = Request.Params["customerId"].ToString();
+            TB_PLAN_DETAIL detail = new TB_PLAN_DETAIL();
+            detail.N_AMOUNT = model.amount;
+            detail.N_CUSTOMER_ID = int.Parse(id) ;
+            detail.N_PLAN_ID = model.planId;
+            detail.S_DESCRIPTION = model.description;
+            detail.S_DETAIL = model.detail;
+            detail.D_EXPRIRE = model.exprireDate;
+            var modelDB = new CustomerDBModel();
+            var modelDB2 = new PlanDBModel();
+            modelDB.createPlanDetail(detail);
+            var plan = modelDB2.getPlanById(model.planId);
+
+            Random rnd = new Random();
+            int ramdom01 = rnd.Next(10000, 99999);
+            int ramdom02 = rnd.Next(10000, 99999);
+            TB_CUSTOMER customer = new TB_CUSTOMER();
+            customer.N_ID = int.Parse(id);
+            customer.S_CODE = plan.S_NAME[0].ToString() + ramdom01.ToString() + ramdom02.ToString();
+            modelDB.updateCodeById(customer);
+            return RedirectToAction("List");
         }
     }
 }

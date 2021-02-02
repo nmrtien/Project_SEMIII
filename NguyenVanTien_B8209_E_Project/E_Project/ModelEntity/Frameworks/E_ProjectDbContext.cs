@@ -56,10 +56,10 @@ namespace ModelEntity.Frameworks
                 .Property(e => e.S_STATUS)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TB_ACCOUNT>()
+            /*modelBuilder.Entity<TB_ACCOUNT>()
                 .HasMany(e => e.TB_CUSTOMER)
                 .WithOptional(e => e.TB_ACCOUNT)
-                .HasForeignKey(e => e.N_ACCOUNT_ID);
+                .HasForeignKey(e => e.N_ACCOUNT_ID);*/
 
             modelBuilder.Entity<TB_CUSTOMER>()
                 .Property(e => e.S_CODE)
