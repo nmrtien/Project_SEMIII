@@ -29,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -38,7 +38,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -142,11 +142,18 @@
     <Compile Include="Areas\Admin\Model\StoreModel.cs" />
     <Compile Include="Areas\Admin\Utils\InfoSession.cs" />
     <Compile Include="Areas\Admin\Utils\SessionHelper.cs" />
+    <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlanListController.cs" />
+    <Compile Include="Controllers\ProductListController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CardModel.cs" />
+    <Compile Include="Models\DetailModel.cs" />
     <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2291,6 +2298,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Detail\Index.cshtml" />
+    <Content Include="Views\Card\Index.cshtml" />
+    <Content Include="Views\ProductList\Index.cshtml" />
+    <Content Include="Views\PlanList\Index.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2300,6 +2312,7 @@
     <Folder Include="Assets\Home\vendor\node-sass\src\" />
     <Folder Include="Assets\Home\vendor\node-sass\test\" />
     <Folder Include="Assets\Home\vendor\nouislider\distribute\" />
+    <Folder Include="Views\Plan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

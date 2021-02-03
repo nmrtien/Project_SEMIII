@@ -40,7 +40,7 @@ namespace E_Project.Controllers
             if (checkLogin != 0 && ModelState.IsValid)
             {
                 var result = new CustomerDBModel().getCustomer(model.account, model.password);
-                SessionHelper.SetSession(new InfoSession() { id = result.N_ID, account = result.S_ACCOUNT, password = result.S_PASSWORD, fullName = result.S_NAME, address = result.S_ADDRESS });
+                SessionHelper.SetSession(new InfoSession() { id = result.N_ID, account = result.S_ACCOUNT, password = result.S_PASSWORD, fullName = result.S_NAME, address = result.S_ADDRESS, phone = result.S_PHONE });
                 return RedirectToAction("Index", "Home");
             }
             else

@@ -143,10 +143,70 @@ CREATE TABLE [dbo].[TB_PLAN](
 
 GO
 
-INSERT INTO [TB_PLAN] VALUES('Dial up','Dial up','Dial up','Dial up','Active','1999-09-29');
-INSERT INTO [TB_PLAN] VALUES('Telephone 5G','Telephone 5G','Telephone 5G','Telephone 5G','Active','1999-09-29');
-INSERT INTO [TB_PLAN] VALUES('Broad Up','Broad Up','Broad Up','Broad Up','Active','1999-09-29');
-INSERT INTO [TB_PLAN] VALUES('Internet','Internet','Internet','Internet','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Dial up','PLAN','(A)	Hourly Basis
+
+(i).	10 Hrs. – 50$ (validity is for one Month)
+(ii).	30 Hrs. – 130$ (validity is for 3 Months)
+(iii).	60 Hrs. – 260$ (validity is for 6 Months)
+
+(B)	Unlimited 28Kbps.
+
+(i).	Monthly – 75$
+(ii).	Quarterly – 150$
+
+(C)	Unlimited 56 Kbps.
+
+(i).	Monthly – 100$
+(ii).	Quarterly – 180$
+','The best selection for Plan','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Telephone 5G','PLAN','(A)	Hourly Basis
+
+(i).	10 Hrs. – 50$ (validity is for one Month)
+(ii).	30 Hrs. – 130$ (validity is for 3 Months)
+(iii).	60 Hrs. – 260$ (validity is for 6 Months)
+
+(B)	Unlimited 28Kbps.
+
+(i).	Monthly – 75$
+(ii).	Quarterly – 150$
+
+(C)	Unlimited 56 Kbps.
+
+(i).	Monthly – 100$
+(ii).	Quarterly – 180$
+','The best selection for Plan','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Broad Up','PLAN','(A)	Hourly Basis
+
+(i).	10 Hrs. – 50$ (validity is for one Month)
+(ii).	30 Hrs. – 130$ (validity is for 3 Months)
+(iii).	60 Hrs. – 260$ (validity is for 6 Months)
+
+(B)	Unlimited 28Kbps.
+
+(i).	Monthly – 75$
+(ii).	Quarterly – 150$
+
+(C)	Unlimited 56 Kbps.
+
+(i).	Monthly – 100$
+(ii).	Quarterly – 180$
+','The best selection for Plan','Active','1999-09-29');
+INSERT INTO [TB_PLAN] VALUES('Internet','PLAN','(A)	Hourly Basis
+
+(i).	10 Hrs. – 50$ (validity is for one Month)
+(ii).	30 Hrs. – 130$ (validity is for 3 Months)
+(iii).	60 Hrs. – 260$ (validity is for 6 Months)
+
+(B)	Unlimited 28Kbps.
+
+(i).	Monthly – 75$
+(ii).	Quarterly – 150$
+
+(C)	Unlimited 56 Kbps.
+
+(i).	Monthly – 100$
+(ii).	Quarterly – 180$
+','The best selection for Plan','Active','1999-09-29');
 
 
 GO
@@ -210,6 +270,7 @@ CREATE TABLE [dbo].[TB_ORDER](
 	[N_ID] int identity(1,1) primary key NOT NULL,
 	[N_AMOUNT] float NOT NULL,
 	[N_TOTAL] int NOT NULL,
+	[S_TYPE] [varchar] (50) NOT NULL,
 	[S_CUSTOMER_NAME] [varchar] (50) NOT NULL,
 	[S_PHONE] [varchar](50) NOT NULL,
 	[S_ADDRESS] [varchar](50) NOT NULL,
@@ -217,15 +278,16 @@ CREATE TABLE [dbo].[TB_ORDER](
 	[S_STATUS] [varchar](50) NOT NULL,
 	[D_CREATED] [DATE] NOT NULL,
 	[N_PRODUCT_ID] int FOREIGN KEY REFERENCES [TB_PRODUCT](N_ID),
-	[N_PLAN_ID] int FOREIGN KEY REFERENCES [TB_PLAN](N_ID)
+	[N_PLAN_ID] int FOREIGN KEY REFERENCES [TB_PLAN](N_ID),
+	[N_CUSTOMER_ID] int 
 	
 ) ON [PRIMARY];
 
 GO
 
-INSERT INTO [TB_ORDER] VALUES(500,2,'Nguyen The Danh','092847747','Ha Noi','Test Order 01','Active','2021-04-30',1,1);
-INSERT INTO [TB_ORDER] VALUES(1000,4,'Nguyen The Danh1','092847747','Ha Noi','Test Order 02','Active','2021-04-30',2,2);
-INSERT INTO [TB_ORDER] VALUES(1500,6,'Nguyen The Danh2','092847747','Ha Noi','Test Order 03','Active','2021-04-30',3,3);
+INSERT INTO [TB_ORDER] VALUES(540,2,'PRODUCT','Nguyen The Danh','092847747','Ha Noi','Test Order 01','InActive','2021-04-30',1,null,1);
+INSERT INTO [TB_ORDER] VALUES(0,4,'PLAN','Nguyen The Danh1','092847747','Ha Noi','Test Order 02','InActive','2021-04-30',NULL,2,2);
+INSERT INTO [TB_ORDER] VALUES(1260,6,'PRODUCT','Nguyen The Danh2','092847747','Ha Noi','Test Order 03','InActive','2021-04-30',3,null,1);
 
 GO
 
@@ -617,7 +679,7 @@ CREATE PROCEDURE Usp_GetDetailOrder
 @S_CUSTOMER_NAME varchar(50),
 	@D_CREATED DATE
 AS
-SELECT od.*, pr.S_NAME AS PRODUCT_NAME, pl.S_NAME AS PLAN_NAME FROM TB_ORDER od
+SELECT od.*, pr.S_NAME AS PRODUCT_NAME, pl.S_NAME AS PLAN_NAME, NULL AS S_DETAIL, NULL AS PRICE FROM TB_ORDER od
 LEFT JOIN TB_PRODUCT pr ON od.N_PRODUCT_ID = pr.N_ID
 LEFT JOIN TB_PLAN pl ON od.N_PLAN_ID = pl.N_ID
 WHERE od.S_CUSTOMER_NAME = @S_CUSTOMER_NAME AND od.D_CREATED = @D_CREATED
@@ -625,15 +687,15 @@ WHERE od.S_CUSTOMER_NAME = @S_CUSTOMER_NAME AND od.D_CREATED = @D_CREATED
 
 GO
 
-CREATE PROCEDURE Usp_GetDetailOrder
+/* CREATE PROCEDURE Usp_GetDetailOrder
 	@S_CUSTOMER_NAME varchar(50),
 	@D_CREATED DATE
 AS
-SELECT od.*, pr.S_NAME AS PRODUCT_NAME FROM TB_ORDER od
+SELECT od.*, pr.S_NAME AS PRODUCT_NAME, NULL AS S_DETAIL FROM TB_ORDER od
 INNER JOIN TB_PRODUCT pr ON od.N_PRODUCT_ID = pr.N_ID
 WHERE od.S_CUSTOMER_NAME = @S_CUSTOMER_NAME AND od.D_CREATED = @D_CREATED 
  ORDER BY od.S_CUSTOMER_NAME;
-
+ */
 GO
 
 CREATE PROCEDURE Usp_UpdateStatusOrder
@@ -648,7 +710,7 @@ GO
 CREATE PROCEDURE Usp_GetOrderById 
 	@N_ID int
 AS
-SELECT od.*, pr.S_NAME AS PRODUCT_NAME, pl.S_NAME AS PLAN_NAME FROM TB_ORDER od
+SELECT od.*, pr.S_NAME AS PRODUCT_NAME, pl.S_NAME AS PLAN_NAME, NULL AS S_DETAIL, NULL AS PRICE FROM TB_ORDER od
 LEFT JOIN TB_PRODUCT pr ON od.N_PRODUCT_ID = pr.N_ID
 LEFT JOIN TB_PLAN pl ON od.N_PLAN_ID = pl.N_ID
 WHERE od.N_ID = @N_ID;
@@ -772,3 +834,49 @@ AS
 UPDATE TB_CUSTOMER
 SET S_CODE = @S_CODE
 WHERE N_ID = @N_ID;
+
+/* 03/02/2021 */
+
+CREATE PROCEDURE Usp_GetOrdersByCustomerId 
+	@N_CUSTOMER_ID int
+AS
+SELECT od.*, pr.S_NAME AS PRODUCT_NAME, pr.N_PRICE AS PRICE, pr.S_DETAIL AS S_DETAIL, pl.S_NAME AS PLAN_NAME FROM TB_ORDER od
+LEFT JOIN TB_PRODUCT pr ON od.N_PRODUCT_ID = pr.N_ID
+LEFT JOIN TB_PLAN pl ON od.N_PLAN_ID = pl.N_ID
+WHERE od.N_CUSTOMER_ID = 4;
+
+GO
+
+CREATE PROCEDURE Usp_ActiveOrderByCustomerId
+	@N_CUSTOMER_ID int
+AS
+
+UPDATE TB_ORDER
+SET S_STATUS = 'Active'
+WHERE N_CUSTOMER_ID = @N_CUSTOMER_ID;
+
+GO
+
+CREATE PROCEDURE Usp_DeleteOrderById
+	@N_ID int
+AS
+
+DELETE FROM TB_ORDER
+WHERE N_ID = @N_ID;
+
+GO
+CREATE PROCEDURE Usp_InsertOrder
+	@N_AMOUNT FLOAT,
+	@N_TOTAL INT,
+	@S_TYPE varchar(50),
+	@S_CUSTOMER_NAME varchar(50),
+	@S_PHONE varchar(50),
+	@S_ADDRESS varchar(50),
+	@N_ID INT,
+	@N_CUSTOMER_ID INT
+AS
+if (@S_TYPE = 'PRODUCT') 
+INSERT INTO TB_ORDER VALUES(@N_AMOUNT,@N_TOTAL,@S_TYPE,@S_CUSTOMER_NAME,@S_PHONE,@S_ADDRESS,null,'InActive',GETDATE(),@N_ID,NULL,@N_CUSTOMER_ID);
+ELSE
+INSERT INTO TB_ORDER VALUES(@N_AMOUNT,@N_TOTAL,@S_TYPE,@S_CUSTOMER_NAME,@S_PHONE,@S_ADDRESS,null,'InActive',GETDATE(),NULL,@N_ID,@N_CUSTOMER_ID);
+GO

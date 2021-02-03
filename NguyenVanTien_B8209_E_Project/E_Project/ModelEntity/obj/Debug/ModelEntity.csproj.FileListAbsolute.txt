@@ -33,3 +33,4 @@ G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\Mod
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csproj.CopyComplete
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.dll
 G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.pdb
+G:\My Files\MyProject\Project_SEMIII\NguyenVanTien_B8209_E_Project\E_Project\ModelEntity\obj\Debug\ModelEntity.csprojAssemblyReference.cache

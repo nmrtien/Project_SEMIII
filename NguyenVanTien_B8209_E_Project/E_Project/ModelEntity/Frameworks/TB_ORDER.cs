@@ -23,6 +23,10 @@ namespace ModelEntity.Frameworks
 
         [Required]
         [StringLength(50)]
+        public string S_TYPE { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string S_PHONE { get; set; }
 
         [Required]
@@ -41,10 +45,16 @@ namespace ModelEntity.Frameworks
         public DateTime D_CREATED { get; set; }
 
         public int? N_PRODUCT_ID { get; set; }
+        public int? N_PLAN_ID { get; set; }
+
+        public int? N_CUSTOMER_ID { get; set; }
+
+        public double? PRICE { get; set; }
 
         public virtual TB_PRODUCT TB_PRODUCT { get; set; }
 
         public string PRODUCT_NAME { get; set; }
         public string PLAN_NAME { get; set; }
+        public string S_DETAIL { get; set; }
     }
 }

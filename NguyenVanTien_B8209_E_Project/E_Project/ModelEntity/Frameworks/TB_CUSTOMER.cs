@@ -59,5 +59,6 @@ namespace ModelEntity.Frameworks
         public string PLAN_NAME { get; set; }
 
         public DateTime? D_EXPRIRE { get; set; }
+
     }
 }

@@ -19,5 +19,9 @@ namespace E_Project.Areas.Admin.Model
         public DateTime createdDate { get; set; }
         public string status { get; set; }
         public int product_id { get; set; }
+
+        public int plan_id { get; set; }
+
+        public int customer_id { get; set; }
     }
 }

@@ -13,34 +13,29 @@
 </head>
 <body>
     <div class="container">
-        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(../Assets/Home/img/banner_01.jpg);width:100%;margin-left:0%">
-            <div class="container py-5">
-                <div class="row px-4 px-lg-5">
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
                     <div class="col-lg-6">
-                        <p class="text-muted small text-uppercase mb-2">New Inspiration 2021</p>
-                        <h1 class="h2 text-uppercase mb-3">You and the world</h1><a class="btn btn-dark" href="">Connections</a>
+                        <h1 class="h2 text-uppercase mb-0">PRODUCT</h1>
+                    </div>
+                    <div class="col-lg-6 text-lg-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-lg-end mb-0 px-0">
+                                <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">PRODUCT</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- CATEGORIES SECTION-->
-        <section class="pt-5">
-            <header class="text-center">
-                <p class="small text-muted small text-uppercase mb-1">Carefully created connections</p>
-                <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
-            </header>
-            <div class="row">
-                @foreach (var item in Model.Plans)
-                {
-                    <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="@Url.Action("Index","Detail", new { id = @item.N_ID, type = "PLAN"})"><img class="img-fluid" src="~/Assets/Home/img/index_plan.jpg" alt=""><strong class="category-item-title" style="margin-top:30%">@item.S_NAME</strong></a></div>
-                }
-            </div>
-        </section>
+      
         <!-- TRENDING PRODUCTS-->
         <section class="py-5">
             <header>
                 <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
-                <h2 class="h5 text-uppercase mb-4">Top products</h2>
+                <h2 class="h5 text-uppercase mb-4">Products</h2>
             </header>
             <div class="row">
                 <!-- PRODUCT-->
@@ -56,13 +51,13 @@
                                         @*<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>*@
                                         @if (Session["inforSession"] == null)
                                         {
-                                        <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="@Url.Action("Login","User")">Add to cart</a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="@Url.Action("Login","User")">Add to cart</a></li>
                                         }
                                         else
                                         {
-                                    <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="@Url.Action("Index","Detail", new { id = @item.N_ID, type = "PRODUCT"})">Detail</a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="@Url.Action("Index","Detail", new { id = @item.N_ID, type = "PRODUCT"})">Detail</a></li>
                                         }
-                                        
+
                                         @*<li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>*@
                                     </ul>
                                 </div>
@@ -76,7 +71,7 @@
 
             </div>
         </section>
-       
+
     </div>
 
 </body>
