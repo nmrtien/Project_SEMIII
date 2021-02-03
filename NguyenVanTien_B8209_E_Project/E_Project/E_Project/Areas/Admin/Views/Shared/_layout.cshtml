@@ -78,6 +78,10 @@
     </li>
         -->
             <!-- Nav Item - Utilities Collapse Menu -->
+            @if ((Session["inforSession"] as InfoSession).type.Equals("admin"))
+                {
+
+           
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("List","Department")">
                     <i class="fas fa-house-user"></i>
@@ -127,6 +131,8 @@
                     <span>CUSTOMER</span>
                 </a>
             </li>
+
+    }
 
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("List","Order")">
